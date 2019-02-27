@@ -1,0 +1,10 @@
+*.xml
+*.png
+*.log
+.idea/*
+node_modeules/*
+errorShots/*
+.DS_Store
+npm-debug.log
+test/reports/allure-results/*
+test/reports/junit-results/*
