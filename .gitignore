@@ -2,7 +2,7 @@
 *.png
 *.log
 .idea/*
-node_modeules/*
+node_modules/*
 errorShots/*
 .DS_Store
 npm-debug.log
