@@ -21,7 +21,6 @@ class ProjectPage extends Page {
   get systemStatus() { return $('#navPanel > div.panelContents > div.navMenu > div:nth-child(5) > div > a.menuItem.status'); }
 
 
-
   validateProjectPageOpened(){
     // Make sure we got logged in, if this passes we're good.
     browser.waitUntil(function() {
