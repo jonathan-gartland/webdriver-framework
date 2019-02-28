@@ -1,10 +1,10 @@
-// import baseConf
+// import shiyappsioConf
 // import { merge } from  'deepmerge';
-var baseConf = require('../base.conf.js');
+var shiyappsioConf = require('../shinyappsio.base.conf.js');
 var merge = require('deepmerge');
 
 // have main config file as default but overwrite environment specific information
-exports.config = merge(baseConf.config, {
+exports.config = merge(shiyappsioConf.config, {
 
   // ==================
   // Specify Test Files
