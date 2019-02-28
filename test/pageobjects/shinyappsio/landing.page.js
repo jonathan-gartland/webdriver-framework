@@ -25,9 +25,5 @@ class ShinyappsioLandingPage extends LandingPage {
     this.loginLinkNamedDashboardForSomeReason.click();
   }
 
-  onShinyappsioLandingPage() {
-    return browser.getUrl().indexOf('shinyapps.io') > -1;
-  }
-
 }
 export default new ShinyappsioLandingPage();
