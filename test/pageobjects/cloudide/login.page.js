@@ -35,14 +35,15 @@ class LoginPage extends Page {
 
   waitForLoginFormToLoad() {
     if(!this.copyrightDiv.isDisplayed()){
-      this.copyrightDiv.waitForDisplayed(5000);
+      this.copyrightDiv.waitForDisplayed(10000);
 
     }
   }
 
   verifyPageElementsRenderForLogin() {
     if(!this.copyrightDiv.isDisplayed()){
-      this.copyrightDiv.waitForDisplayed(5000);
+      this.copyrightDiv.waitForDisplayed(10000);
+
     }
   }
 

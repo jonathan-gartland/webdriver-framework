@@ -7,8 +7,10 @@
  */
 
 import { expect } from 'chai';
-import LoginPage from '../../../pageobjects/cloudide/login.page';
 import { assert } from 'assert';
+import LoginPage from '../../../pageobjects/cloudide/login.page';
+import ProjectPage from '../../../pageobjects/cloudide/project.page';
+
 
 
 describe('login form', () => {
@@ -22,9 +24,7 @@ describe('login form', () => {
       'rsctest99'
     );
 
-    LoginPage.validateUserLoggedIn();
-    //assert(LoginPage.validateUserLoggedIn() === true);
-    //assert.isTrue(LoginPage.validateUserLoggedIn());
+    ProjectPage.validateProjectPageOpened();
 
 
     // todo : args from command
