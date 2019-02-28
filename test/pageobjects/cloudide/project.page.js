@@ -1,5 +1,5 @@
 import Page from '../page';
-var assert = require('assert');
+import assert from 'assert';
 /**
  Stub code, again mostly copied from https://webdriver.io/docs/pageobjects.html
  using as base pattern for rstudio.cloud interactions
@@ -24,8 +24,9 @@ class ProjectPage extends Page {
 
   validateProjectPageOpened(){
     // Make sure we got logged in, if this passes we're good.
-    this.topBandElement.waitForDisplayed(40000);
-    assert(browser.getUrl().indexOf('/projects') > -1);
+    browser.waitUntil(function() {
+      return browser.getUrl().indexOf('/projects') > -1;
+    }, 30000);
 
   }
 

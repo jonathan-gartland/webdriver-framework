@@ -35,15 +35,14 @@ class LoginPage extends Page {
 
   waitForLoginFormToLoad() {
     if(!this.copyrightDiv.isDisplayed()){
-      this.copyrightDiv.waitForDisplayed(5000);
+      this.copyrightDiv.waitForDisplayed(10000);
 
     }
   }
 
   verifyPageElementsRenderForLogin() {
     if(!this.copyrightDiv.isDisplayed()){
-      this.copyrightDiv.waitForDisplayed(5000);
-      browser.waitforTimeout(5000);
+      this.copyrightDiv.waitForDisplayed(10000);
     }
   }
 
@@ -51,7 +50,6 @@ class LoginPage extends Page {
     this.userInput.setValue(userName);
     this.passWord.setValue(passWord);
     this.loginButton.click();
-    ProjectPage.validateProjectPageOpened()
 
   }
 

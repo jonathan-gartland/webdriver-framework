@@ -8,6 +8,7 @@
 
 //import { expect } from 'chai';
 import LoginPage from '../../../pageobjects/cloudide/login.page';
+import ProjectPage from '../../../pageobjects/cloudide/project.page';
 
 
 describe('login form', () => {
@@ -20,6 +21,9 @@ describe('login form', () => {
       'connect-qa+10000@rstudio.com',
       'rsctest99'
     );
+
+    ProjectPage.validateProjectPageOpened();
+
     // todo : args from command
 
   });
