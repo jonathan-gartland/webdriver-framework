@@ -13,7 +13,10 @@ describe('RStudio.cloud Landing page', function () {
   it ('should be the landing page for RStudio.cloud, completely loaded', function () {
     IdeLandingPage.open();
     IdeLandingPage.waitForLandingPageToLoad();
-    assert(IdeLandingPage.onLandingPage());
+    // todo this should be coming in as part of the env arg
+    // or strip it from browser.baseUrl before adding here
+    // hard coding for now
+    assert(IdeLandingPage.onLandingPage('rstudio.cloud'));
   })
 })
 

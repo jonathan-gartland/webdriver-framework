@@ -15,5 +15,9 @@ export default class LandingPage extends Page {
     super.open('/');
     browser.pause(3000)
   }
+
+  onLandingPage(urlSnippet) {
+    return browser.getUrl().indexOf(urlSnippet) > -1;
+  }
 }
 

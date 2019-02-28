@@ -40,11 +40,6 @@ class CloudIdeLandingPage extends LandingPage {
     return $('#footerLogo');
   }
 
-  // open() {
-  //   super.open('/');
-  //   browser.pause(3000)
-  // }
-
   onLandingPage() {
     return browser.getUrl().indexOf('rstudio.cloud') > -1;
   }

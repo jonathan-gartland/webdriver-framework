@@ -8,23 +8,16 @@ import assert from 'assert';
  */
 class ShinyappsioLandingPage extends LandingPage {
 
-  get footer() { return $('body > footer'); }
 
   get loginLinkNamedDashboardForSomeReason(){
     return $('#navbar-collapse-1 > ul > li:nth-child(5) > a');
   }
 
-
-
-  // open() {
-  //   super.open('/');
-  //   browser.pause(3000);
-  // }
-
+  // better way thn caling to super...probably
   waitForLandingPageToLoad() {
     // use the footer element being visible as a check for successful page load
-    if(!this.footer.isDisplayed()){
-      this.footer.waitForDisplayed(10000);
+    if(!super.footer.isDisplayed()){
+      super.footer.waitForDisplayed(10000);
     }
   }
 
