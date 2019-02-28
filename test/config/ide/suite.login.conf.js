@@ -23,9 +23,19 @@ exports.config = merge(baseConf.config, {
     // './test/specs/file-to-exclude.js'
   ],
 
-
-
-  baseUrl: 'https://staging.rstudio.cloud',
+  // capabilities: [
+  //   {
+  //     // maxInstances can get overwritten per capability. So if you have an in-house Selenium
+  //     // grid with only 5 Chrome instances available you can make sure that not more than
+  //     // 5 instances get started at a time.
+  //     //maxInstances: 5,
+  //     browserName: 'chrome',
+  //     'goog:chromeOptions': {
+  //       // to run chrome headless the following flags are required
+  //       // (see https://developers.google.com/web/updates/2017/04/headless-chrome)
+  //       //args: ['--headless', '--disable-gpu'],
+  //     }
+  //   }]
 
   // run tests on sauce instead locally
   // user: process.env.SAUCE_USERNAME,
