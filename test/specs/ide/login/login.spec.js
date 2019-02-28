@@ -20,6 +20,8 @@ describe('login form', () => {
       'connect-qa+10000@rstudio.com',
       'rsctest99'
     );
+    LoginPage.validateUserLoggedIn();
+
     // todo : args from command
 
   });

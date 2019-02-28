@@ -51,7 +51,13 @@ class LoginPage extends Page {
     this.userInput.setValue(userName);
     this.passWord.setValue(passWord);
     this.loginButton.click();
-    ProjectPage.validateProjectPageOpened()
+
+  }
+
+  validateUserLoggedIn() {
+    browser.waitforTimeout(5000);
+    // todo replace with a wait for element type validation
+    ProjectPage.validateProjectPageOpened();
 
   }
 
