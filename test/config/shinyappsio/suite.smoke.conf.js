@@ -1,6 +1,6 @@
 // import shiyappsioConf
 // import { merge } from  'deepmerge';
-var shiyappsioConf = require('../shinyappsio.base.conf.js');
+var shiyappsioConf = require('./shinyappsio.base.conf.js');
 var merge = require('deepmerge');
 
 // have main config file as default but overwrite environment specific information

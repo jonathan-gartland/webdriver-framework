@@ -5,6 +5,6 @@ var merge = require('deepmerge');
 
 exports.config = merge(baseConf.config, {
 
-  baseUrl: 'https://staging.shinyapps.io',
+  baseUrl: 'https://www.staging.shinyapps.io',
 
 }, { clone: false });
