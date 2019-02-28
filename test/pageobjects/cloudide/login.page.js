@@ -43,7 +43,6 @@ class LoginPage extends Page {
   verifyPageElementsRenderForLogin() {
     if(!this.copyrightDiv.isDisplayed()){
       this.copyrightDiv.waitForDisplayed(5000);
-      browser.waitforTimeout(5000);
     }
   }
 
@@ -55,7 +54,6 @@ class LoginPage extends Page {
   }
 
   validateUserLoggedIn() {
-    browser.waitforTimeout(5000);
     // todo replace with a wait for element type validation
     ProjectPage.validateProjectPageOpened();
 
