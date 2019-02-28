@@ -7,7 +7,7 @@
  */
 
 //import { expect } from 'chai';
-import LoginPage from '../../../pageobjects/ide/login.page';
+import LoginPage from '../../../pageobjects/cloudide/login.page';
 
 
 describe('login form', () => {

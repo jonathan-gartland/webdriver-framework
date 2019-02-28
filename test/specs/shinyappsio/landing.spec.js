@@ -1,4 +1,4 @@
-import LandingPage from '../../pageobjects/shinyappsio/landing.page';
+import ShinyappsioLandingPage from '../../pageobjects/shinyappsio/landing.page';
 import assert from 'assert';
 import utl from '../../../utilities/common-utilities';
 
@@ -12,9 +12,9 @@ describe('Shinyapps.io Landing page', function () {
 
   it ('should be the landing page for Shinyapps.io', function () {
 
-    LandingPage.open();
-    LandingPage.waitForLandingPageToLoad();
-    assert(LandingPage.onShinyappsioLandingPage());
+    ShinyappsioLandingPage.open();
+    ShinyappsioLandingPage.waitForLandingPageToLoad();
+    assert(ShinyappsioLandingPage.onShinyappsioLandingPage());
     // assert we are on landing page here
 
 

@@ -1,4 +1,4 @@
-import Page from '../page';
+import LandingPage from '../landing.page';
 import assert from 'assert';
 /**
  Stub code, again mostly copied from https://webdriver.io/docs/pageobjects.html
@@ -6,7 +6,7 @@ import assert from 'assert';
 
 
  */
-class LandingPage extends Page {
+class ShinyappsioLandingPage extends LandingPage {
 
   get footer() { return $('body > footer'); }
 
@@ -16,10 +16,10 @@ class LandingPage extends Page {
 
 
 
-  open() {
-    super.open('/');
-    browser.pause(3000);
-  }
+  // open() {
+  //   super.open('/');
+  //   browser.pause(3000);
+  // }
 
   waitForLandingPageToLoad() {
     // use the footer element being visible as a check for successful page load
@@ -37,4 +37,4 @@ class LandingPage extends Page {
   }
 
 }
-export default new LandingPage();
+export default new ShinyappsioLandingPage();

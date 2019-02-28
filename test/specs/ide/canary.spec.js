@@ -9,7 +9,7 @@ String googleUser1_username = "connect-qa@rstudio.com";
  */
 
 //import { expect } from 'chai';
-import LoginPage from '../../pageobjects/ide/login.page';
+import LoginPage from '../../pageobjects/cloudide/login.page';
 
 describe('login form', () => {
   // it('should deny access with wrong creds', () => {

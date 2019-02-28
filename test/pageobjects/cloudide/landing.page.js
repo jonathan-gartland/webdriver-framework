@@ -1,6 +1,6 @@
-import Page from '../page';
+import LandingPage from '../landing.page';
 // import landingSelectors from '../../selectors/ide/landing'
-var assert = require('assert');
+import assert from 'assert';
 
 /**
  Stub code, again mostly copied from https://webdriver.io/docs/pageobjects.html
@@ -8,7 +8,7 @@ var assert = require('assert');
 
 
  */
-class LandingPage extends Page {
+class CloudIdeLandingPage extends LandingPage {
 
   // first pass - critical elements to get logged in
 
@@ -40,10 +40,10 @@ class LandingPage extends Page {
     return $('#footerLogo');
   }
 
-  open() {
-    super.open('/');
-    browser.pause(3000)
-  }
+  // open() {
+  //   super.open('/');
+  //   browser.pause(3000)
+  // }
 
   onLandingPage() {
     return browser.getUrl().indexOf('rstudio.cloud') > -1;
@@ -77,4 +77,4 @@ class LandingPage extends Page {
 
 }
 
-export default new LandingPage();
+export default new CloudIdeLandingPage();

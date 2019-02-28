@@ -1,4 +1,4 @@
-import LandingPage from '../../pageobjects/ide/landing.page';
+import IdeLandingPage from '../../pageobjects/cloudide/landing.page';
 import assert from 'assert';
 import utl from '../../../utilities/common-utilities';
 
@@ -11,9 +11,9 @@ describe('RStudio.cloud Landing page', function () {
   this.timeout(30000);
 
   it ('should be the landing page for RStudio.cloud, completely loaded', function () {
-    LandingPage.open();
-    LandingPage.waitForLandingPageToLoad();
-    assert(LandingPage.onLandingPage());
+    IdeLandingPage.open();
+    IdeLandingPage.waitForLandingPageToLoad();
+    assert(IdeLandingPage.onLandingPage());
   })
 })
 
@@ -42,13 +42,13 @@ describe('RStudio.cloud Landing page, top nav links', function() {
 
 describe('RStudio.cloud Landing page, account login', function() {
   it('should allow user to navigate to account nav and see the links for login and signup', function () {
-    LandingPage.open();
-    LandingPage.waitForLandingPageToLoad();
-    if(LandingPage.onLandingPage()) {
-      LandingPage.findMenuToggleWidgetAndClick();
+    IdeLandingPage.open();
+    IdeLandingPage.waitForLandingPageToLoad();
+    if(IdeLandingPage.onLandingPage()) {
+      IdeLandingPage.findMenuToggleWidgetAndClick();
     }
-    console.log(LandingPage.accountNavLinkIsVisible());
-    assert(LandingPage.accountNavLinkIsVisible());
+    console.log(IdeLandingPage.accountNavLinkIsVisible());
+    assert(IdeLandingPage.accountNavLinkIsVisible());
   });
 })
 
