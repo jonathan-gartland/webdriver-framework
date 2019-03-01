@@ -116,10 +116,10 @@ exports.config = {
     connectionRetryTimeout: 90000,    // Default timeout in milliseconds for request if Selenium Grid doesn't send response
     connectionRetryCount: 3,          // Default request retries count
 
-    //services: ['selenium-standalone'],
-    services: ['browserstack'],
-    user: process.env.BROWSERSTACK_USERNAME || 'BROWSERSTACK_USERNAME',
-    key: process.env.BROWSERSTACK_ACCESS_KEY || 'BROWSERSTACK_ACC_KEY',
+    services: ['selenium-standalone'],
+    // services: ['browserstack'],
+    // user: process.env.BROWSERSTACK_USERNAME || 'BROWSERSTACK_USERNAME',
+    // key: process.env.BROWSERSTACK_ACCESS_KEY || 'BROWSERSTACK_ACC_KEY',
 
   // browserstackLocal: true,
 
