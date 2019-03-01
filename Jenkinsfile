@@ -10,7 +10,7 @@ node('docker') {
             withEnv(['HOME=.']) {
 
                 stage('Install requirements') {
-                    sh 'cd ./tests/cloud_ide && npm install -d'
+                    sh 'npm install -d'
                 }
             }
 
@@ -28,25 +28,22 @@ node('docker') {
                     //browserstack('6026f57b-72ff-4eb6-850f-3a76c509356f') {
                     // some block
 
-                    sh 'cd ./tests/cloud_ide && npm test'
+                    sh 'npm test'
                     //}
                 } finally {
-                    sh 'cd ./tests/cloud_ide'
-                    sh 'pwd'
+                    junit '**test/reports/test-results-*.xml'
 
-//                    junit '**tests/cloud_ide/test/reports/test-results-*.xml'
-//
-//                    step([$class             : 'CoberturaPublisher',
-//                          autoUpdateHealth   : false,
-//                          autoUpdateStability: false,
-//                          coberturaReportFile: 'coverage/cobertura-coverage.xml',
-//                          failNoReports      : false,
-//                          failUnhealthy      : false,
-//                          failUnstable       : false,
-//                          maxNumberOfBuilds  : 0,
-//                          onlyStable         : false,
-//                          sourceEncoding     : 'ASCII',
-//                          zoomCoverageChart  : false])
+                    step([$class             : 'CoberturaPublisher',
+                          autoUpdateHealth   : false,
+                          autoUpdateStability: false,
+                          coberturaReportFile: 'coverage/cobertura-coverage.xml',
+                          failNoReports      : false,
+                          failUnhealthy      : false,
+                          failUnstable       : false,
+                          maxNumberOfBuilds  : 0,
+                          onlyStable         : false,
+                          sourceEncoding     : 'ASCII',
+                          zoomCoverageChart  : false])
                     //todo : change to appropriate channel when this goes live
                     // most likely qaautotest, but maybe we use a #hostedtesting
                     // the world is our oyster
