@@ -13,7 +13,7 @@ import ProjectPage from '../../../pageobjects/cloudide/project.page';
 
 
 
-describe('login form', () => {
+describe('login form logging in', () => {
 
   it('should allow access with correct credentials', () => {
     LoginPage.logInFromLandingPage();
