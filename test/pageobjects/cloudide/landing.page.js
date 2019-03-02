@@ -1,6 +1,7 @@
 import LandingPage from '../landing.page';
-// import landingSelectors from '../../selectors/ide/landing'
+import Selectors from '../../selectors/ide.js'
 import assert from 'assert';
+import fs from 'fs';
 
 /**
  Stub code, again mostly copied from https://webdriver.io/docs/pageobjects.html
@@ -11,6 +12,8 @@ import assert from 'assert';
 class CloudIdeLandingPage extends LandingPage {
 
   // first pass - critical elements to get logged in
+
+  //let selectors = JSON.parse(fs.readFileSync('file', 'utf8'));
 
   //login and sign in links
   // todo : implement tests to validate they work
