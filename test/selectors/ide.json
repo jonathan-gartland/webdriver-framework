@@ -2,10 +2,10 @@
   "cloudIde" : [{
     "landingPageSelectors": [{
       "menuLinks": "#currentUser > div > div.menuItems > div > a",
-      "menuToggler": "#menuToggler",
-      "accountNavLogin": "#userPanel > div > div.menu > a.menuItem.login",
+      "menuToggler": "'#menuToggler'",
+      "accountNavLogin": "'#userPanel > div > div.menu > a.menuItem.login'",
       "accountNavSignup": "#userPanel > div > div.menu > a.menuItem.signup",
-      "footerLogo": "#footerLogo"
+      "footerLogo": "'#footerLogo'"
     }],
     "loginPageSelectors": [{
       "userInput": "body > div > div > div > form:nth-child(1) > input[type=\"email\"]:nth-child(2)",
