@@ -1,5 +1,5 @@
 import LandingPage from '../landing.page';
-import Selectors from '../../selectors/ide.js'
+import cloudIde from '../../selectors/ide.json'
 import assert from 'assert';
 import fs from 'fs';
 
@@ -13,20 +13,37 @@ class CloudIdeLandingPage extends LandingPage {
 
   // first pass - critical elements to get logged in
 
-  //let selectors = JSON.parse(fs.readFileSync('file', 'utf8'));
+  /*
+  dynamically set these up? would help speed up development
+  adding features.
+
+
+  for _ in cloudIde.landingPage {
+    get _() { return $(cloudIde.landingPage._); }
+  }
+
+  "landingPageSelectors": {
+      "menuLinks": "'#currentUser > div > div.menuItems > div > a'",
+      "menuToggler": "'#menuToggler'",
+      "accountNavLogin": "'#userPanel > div > div.menu > a.menuItem.login'",
+      "accountNavSignup": "'#userPanel > div > div.menu > a.menuItem.signup'",
+      "footerLogo": "'#footerLogo'"
+    },
+
+   */
 
   //login and sign in links
   // todo : implement tests to validate they work
   get menuLinks() {
     return $('#currentUser > div > div.menuItems > div > a');
-    // return $(landingSelectors['menuLinks']);
+    // return $(cloudIde.landingPage.menuLinks);
   }
 
   // The menuToggler element manages the visibility and focus for
   // the element: css class sidePanel id userPanel
   get menuToggler() {
     return $('#menuToggler');
-    //return $(landingSelectors['menuToggler']);
+
   }
 
   // following 2 elements are the login and sign in widgets
@@ -48,6 +65,8 @@ class CloudIdeLandingPage extends LandingPage {
   }
 
   waitForLandingPageToLoad() {
+    console.log(cloudIde.toString());
+
     // use the footer element being visible as a check for successful page load
     if(!this.footerWidgetToCheckPageLoad.isDisplayed()){
       this.footerWidgetToCheckPageLoad.waitForDisplayed(10000);
