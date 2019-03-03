@@ -2,8 +2,8 @@ import IdeLandingPage from '../../pageobjects/cloudide/landing.page';
 import assert from 'assert';
 import utl from '../../../utilities/common-utilities';
 
-const debug = process.env.DEBUG;
 
+const debug = process.env.DEBUG;
 
 // Landing Page
 describe('RStudio.cloud Landing page', function () {
@@ -13,6 +13,7 @@ describe('RStudio.cloud Landing page', function () {
   it ('should be the landing page for RStudio.cloud, completely loaded', function () {
     IdeLandingPage.open();
     IdeLandingPage.waitForLandingPageToLoad();
+    // console.log(selectors.cloudIde.landingPageSelectors.menuToggler);
     assert(IdeLandingPage.onLandingPage());
   })
 })
@@ -26,7 +27,7 @@ describe('RStudio.cloud Landing page', function () {
 // describe('RStudio.cloud Landing page, top nav links', function() {
 //   it('should be the link to sign up for RStudio.cloud', function() {
 //
-//   });
+//  });
 // })
 
 /*
@@ -47,7 +48,7 @@ describe('RStudio.cloud Landing page, account login', function() {
     if(IdeLandingPage.onLandingPage()) {
       IdeLandingPage.findMenuToggleWidgetAndClick();
     }
-    console.log(IdeLandingPage.accountNavLinkIsVisible());
+    //console.log(IdeLandingPage.accountNavLinkIsVisible());
     assert(IdeLandingPage.accountNavLinkIsVisible());
   });
 })

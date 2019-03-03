@@ -2,6 +2,7 @@ import LandingPage from '../landing.page';
 import cloudIde from '../../selectors/ide.json'
 import assert from 'assert';
 import fs from 'fs';
+const selectors = require('../../selectors/ide.json');
 
 /**
  Stub code, again mostly copied from https://webdriver.io/docs/pageobjects.html
@@ -36,13 +37,14 @@ class CloudIdeLandingPage extends LandingPage {
   // todo : implement tests to validate they work
   get menuLinks() {
     return $('#currentUser > div > div.menuItems > div > a');
-    // return $(cloudIde.landingPage.menuLinks);
+    // return $(selectors.cloudIde.landingPage.menuLinks);
   }
 
   // The menuToggler element manages the visibility and focus for
   // the element: css class sidePanel id userPanel
   get menuToggler() {
-    return $('#menuToggler');
+    //return $('#menuToggler');
+    return $(selectors.cloudIde.landingPageSelectors.menuToggler);
 
   }
 
