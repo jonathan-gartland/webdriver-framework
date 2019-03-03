@@ -5,14 +5,16 @@
  placeholder while i build out infrastructure.
 
  * */
+
+
 export default class Page {
-  // constructor() {
-  //   this.title = 'My Page';
-  // }
 
   open(path) {
     browser.url(path);
   }
 
+  getSelectors(){
+    return require('../../selectors/ide.json');
+  }
   // todo : any other basic functionality? maybe not.
 }

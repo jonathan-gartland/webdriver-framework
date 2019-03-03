@@ -13,14 +13,13 @@ const selectors = require('../../selectors/ide.json');
 class CloudIdeLandingPage extends LandingPage {
 
   // first pass - critical elements to get logged in
-
   /*
   dynamically set these up? would help speed up development
   adding features.
 
 
-  for _ in cloudIde.landingPage {
-    get _() { return $(cloudIde.landingPage._); }
+  for _ in cloudIde.landingPageSelectors {
+    get _() { return $(selectors.cloudIde.landingPageSelectors._); }
   }
 
   "landingPageSelectors": {
@@ -36,30 +35,29 @@ class CloudIdeLandingPage extends LandingPage {
   //login and sign in links
   // todo : implement tests to validate they work
   get menuLinks() {
-    return $('#currentUser > div > div.menuItems > div > a');
-    // return $(selectors.cloudIde.landingPage.menuLinks);
+    //  return $('#currentUser > div > div.menuItems > div > a');
+    return $(selectors.cloudIde.landingPageSelectors.menuLinks);
   }
+
 
   // The menuToggler element manages the visibility and focus for
   // the element: css class sidePanel id userPanel
   get menuToggler() {
-    //return $('#menuToggler');
     return $(selectors.cloudIde.landingPageSelectors.menuToggler);
-
   }
 
   // following 2 elements are the login and sign in widgets
   // that menuToggler exposes or hides
   get accountLinkLogin() {
-    return $('#userPanel > div > div.menu > a.menuItem.login');
+    return $(selectors.cloudIde.landingPageSelectors.accountNavLogin);
   }
   get accountLinkSignup() {
-    return $('#userPanel > div > div.menu > a.menuItem.signup');
+    return $(selectors.cloudIde.landingPageSelectors.accountNavSignup);
   }
 
   // element for page load success check
   get footerWidgetToCheckPageLoad() {
-    return $('#footerLogo');
+    return $(selectors.cloudIde.landingPageSelectors.footerLogo);
   }
 
   onLandingPage() {
@@ -67,8 +65,6 @@ class CloudIdeLandingPage extends LandingPage {
   }
 
   waitForLandingPageToLoad() {
-    console.log(cloudIde.toString());
-
     // use the footer element being visible as a check for successful page load
     if(!this.footerWidgetToCheckPageLoad.isDisplayed()){
       this.footerWidgetToCheckPageLoad.waitForDisplayed(10000);
