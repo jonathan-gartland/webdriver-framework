@@ -12,9 +12,7 @@ export default class Page {
   open(path) {
     browser.url(path);
   }
-
-  getSelectors(){
-    return require('../../selectors/ide.json');
-  }
+  // todo : import selectors here and set up the json oject so each component can easily
+  // access the selectors
   // todo : any other basic functionality? maybe not.
 }

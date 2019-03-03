@@ -32,37 +32,23 @@ class CloudIdeLandingPage extends LandingPage {
 
    */
 
-  //login and sign in links
+  // login and sign in links --------------------------------------------------
   // todo : implement tests to validate they work
-  get menuLinks() {
-    //  return $('#currentUser > div > div.menuItems > div > a');
-    return $(selectors.cloudIde.landingPageSelectors.menuLinks);
-  }
-
-
+  get menuLinks() { return $(selectors.cloudIde.landingPageSelectors.menuLinks); }
   // The menuToggler element manages the visibility and focus for
   // the element: css class sidePanel id userPanel
-  get menuToggler() {
-    return $(selectors.cloudIde.landingPageSelectors.menuToggler);
-  }
-
+  get menuToggler() { return $(selectors.cloudIde.landingPageSelectors.menuToggler); }
   // following 2 elements are the login and sign in widgets
   // that menuToggler exposes or hides
-  get accountLinkLogin() {
-    return $(selectors.cloudIde.landingPageSelectors.accountNavLogin);
-  }
-  get accountLinkSignup() {
-    return $(selectors.cloudIde.landingPageSelectors.accountNavSignup);
-  }
-
+  get accountLinkLogin() { return $(selectors.cloudIde.landingPageSelectors.accountNavLogin); }
+  get accountLinkSignup() { return $(selectors.cloudIde.landingPageSelectors.accountNavSignup); }
   // element for page load success check
-  get footerWidgetToCheckPageLoad() {
-    return $(selectors.cloudIde.landingPageSelectors.footerLogo);
-  }
+  get footerWidgetToCheckPageLoad() { return $(selectors.cloudIde.landingPageSelectors.footerLogo); }
+  //
+  // --------------------------------------------------------------------------
 
-  onLandingPage() {
-    return browser.getUrl().indexOf('rstudio.cloud') > -1;
-  }
+  // return if we are on landing page, verify by url substring
+  onLandingPage() { return browser.getUrl().indexOf('rstudio.cloud') > -1; }
 
   waitForLandingPageToLoad() {
     // use the footer element being visible as a check for successful page load
