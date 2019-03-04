@@ -1,7 +1,7 @@
 # lucid-webdriverio-tests
 Project holding related webdriverio code for testing rstudio.cloud and shinyapps.io
 
-###Hosted Apps End to End UI Testing
+### Hosted Apps End to End UI Testing
 
 Pre-requisites to run:  
 User has, or can get installed, Node 8.14.0+ and java 8+ on machine tests will be running.
