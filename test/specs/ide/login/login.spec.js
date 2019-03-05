@@ -18,8 +18,8 @@ describe('login form', () => {
     LoginPage.waitForLoginFormToLoad();
     LoginPage.verifyPageElementsRenderForLogin();
     LoginPage.loginWithUserNamePasswordCombo(
-      'connect-qa+10000@rstudio.com',
-      'rsctest99'
+      process.env.LOGIN_NAME,
+      process.env.PASSWORD
     );
 
     ProjectPage.validateProjectPageOpened();
