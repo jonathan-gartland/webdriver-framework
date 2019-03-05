@@ -10,16 +10,11 @@ class ShinyappsioLandingPage extends LandingPage {
 
   get footer() { return $('body > footer'); }
 
-  get loginLinkNamedDashboardForSomeReason(){
+  get loginDashboardLink(){
     return $('#navbar-collapse-1 > ul > li:nth-child(5) > a');
   }
 
 
-
-  // open() {
-  //   super.open('/');
-  //   browser.pause(3000);
-  // }
 
   waitForLandingPageToLoad() {
     // use the footer element being visible as a check for successful page load
@@ -29,7 +24,7 @@ class ShinyappsioLandingPage extends LandingPage {
   }
 
   loginAkaDashboard() {
-    this.loginLinkNamedDashboardForSomeReason.click();
+    this.loginDashboardLink.click();
   }
 
   onShinyappsioLandingPage() {

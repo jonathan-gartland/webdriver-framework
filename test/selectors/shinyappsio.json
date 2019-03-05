@@ -1,9 +1,25 @@
 {
   "landingPage": {
+    "headerLogo": "body > header > div > div > div.navbar-header > div",
+    "loginOrDashboardLink": "#navbar-collapse-1 > ul > li:nth-child(5) > a",
+    "supportLink": "#navbar-collapse-1 > ul > li:nth-child(4) > a",
+    "pricingLink": "#navbar-collapse-1 > ul > li:nth-child(3) > a",
+    "featuresLink": "#navbar-collapse-1 > ul > li:nth-child(2) > a",
+    "homeLink": "#navbar-collapse-1 > ul > li:nth-child(1) > a"
 
   },
 
   "loginPage" : {
+    "logo": "#content > section > div > div:nth-child(3) > section > h1 > a",
+    "emailInput": "#content > section > div > div.auth-body > div > div > form > fieldset > div:nth-child(1) > div > input",
+    "passwordInput": "#content > section > div > div.auth-body > div > div > form > fieldset > div:nth-child(2) > div > span",
+    "loginButton": "#content > section > div > div.auth-body > div > div > form > fieldset > div:nth-child(4) > button",
+    "loginGoogle": "#content > section > div > div.auth-body > div > div > a:nth-child(5)",
+    "loginGithub": "#content > section > div > div.auth-body > div > div > a:nth-child(6)",
+    "forgotPasswordLink": "#content > section > div > div.auth-body > div > div > a:nth-child(6)",
+    "signUpLink": "#content > section > div > div.auth-body > div > div > section > p > a:nth-child(3)",
+    "termsofuseLink": "#content > section > div > div.auth-body > div > div > section > p > a:nth-child(3)",
+    "footer": "#footer"
 
   },
 
