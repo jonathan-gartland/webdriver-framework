@@ -10,6 +10,7 @@ import { expect } from 'chai';
 import { assert } from 'assert';
 import LoginPage from '../../../pageobjects/cloudide/login.page';
 import ProjectPage from '../../../pageobjects/cloudide/project.page';
+import AccountPopUpPage from "../../../pageobjects/cloudide/account.select.popup.page.js";
 
 
 
@@ -23,6 +24,12 @@ describe('login form logging in', () => {
       process.env.LOGIN_NAME,
       process.env.PASSWORD
     );
+
+
+    // if(AccountPopUpPage.popUpIsOpen()){
+    //   console.log('placeholder for info');
+    // }
+
 
     ProjectPage.validateProjectPageOpened();
 

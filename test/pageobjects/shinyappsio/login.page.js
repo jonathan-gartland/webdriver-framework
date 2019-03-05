@@ -1,6 +1,7 @@
 import Page from '../page';
 import LandingPage from "./landing.page";
 import DashboardPage from "./dashboard.page";
+const selectors = require('../../selectors/shinyappsio.json');
 
 /**
  Stub code, again mostly copied from https://webdriver.io/docs/pageobjects.html
@@ -10,15 +11,15 @@ import DashboardPage from "./dashboard.page";
 class LoginPage extends Page {
 
   // Elements from our login form page
-  get userInput() { return $('#content > section > div > div.auth-body > div > div > form > fieldset > div:nth-child(1) > div > input'); }
-  get passWord() { return $('#content > section > div > div.auth-body > div > div > form > fieldset > div:nth-child(2) > div > input'); }
-  get loginButton() { return $('#content > section > div > div.auth-body > div > div > form > fieldset > div:nth-child(4) > button'); }
-  get loginGoogleButton() { return $('#content > section > div > div.auth-body > div > div > a:nth-child(5)'); }
-  get loginGithubButton() { return $('#content > section > div > div.auth-body > div > div > a:nth-child(6)'); }
-  get forgotPasswordLink() { return $('#content > section > div > div.auth-body > div > div > section > p > a:nth-child(1)'); }
-  get signUpLink() { return $('#content > section > div > div.auth-body > div > div > section > p > a:nth-child(3)'); }
-  get termsOfServiceLink() { return $('#footer > a:nth-child(2)'); }
-  get footer() { return $('#footer'); }
+  get userInput() { return $(selectors.shinyappsIo.loginPage.emailInput); }
+  get passWord() { return $(selectors.shinyappsIo.loginPage.passwordInput); }
+  get loginButton() { return $(selectors.shinyappsIo.loginPage.loginButton); }
+  get loginGoogleButton() { return $(selectors.shinyappsIo.loginPage.loginGoogle); }
+  get loginGithubButton() { return $(selectors.shinyappsIo.loginPage.loginGithub); }
+  get forgotPasswordLink() { return $(selectors.shinyappsIo.loginPage.forgotPasswordLink); }
+  get signUpLink() { return $(selectors.shinyappsIo.loginPage.signUpLink); }
+  get termsOfServiceLink() { return $(selectors.shinyappsIo.loginPage.termsofuseLink); }
+  get footer() { return $(selectors.shinyappsIo.loginPage.footer); }
 
   // Login via username password function
   logInFromLandingPage() {
@@ -26,7 +27,7 @@ class LoginPage extends Page {
     //email user name, google, github
 
     LandingPage.open();
-    LandingPage.waitForLandingPageToLoad();
+    //LandingPage.waitForLandingPageToLoad();
     // navigate to landing page and use the log in button
     LandingPage.loginAkaDashboard();
 
