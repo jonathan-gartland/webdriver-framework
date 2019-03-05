@@ -1,11 +1,27 @@
 {
   "cloudIde" : {
     "landingPage": {
+      "logInHeader": "#currentUser > div > div.menuItems > div > a:nth-child(1)",
+      "signInHeader": "#currentUser > div > div.menuItems > div > a:nth-child(2)",
+      "headerLogo": "#rStudioHeader > div.band > div > div.headerChunk > a > div",
       "menuLinks": "#currentUser > div > div.menuItems > div > a",
       "menuToggler": "#menuToggler",
       "accountNavLogin": "#userPanel > div > div.menu > a.menuItem.login",
       "accountNavSignup": "#userPanel > div > div.menu > a.menuItem.signup",
-      "footerLogo": "#footerLogo"
+      "bigButton": "#homeContent > div.band.welcome > div > div.actions > a",
+      "inPageLogIn": "#homeContent > div.band.existingAccount > div > div > span > a",
+      "tutorialLink": "#homeContent > div.band.learn > div > div.bandBlurb > a:nth-child(2)",
+      "cheatsheetsLink": "#homeContent > div.band.learn > div > div.bandBlurb > a:nth-child(4)",
+      "datacampLink": "#homeContent > div.band.learn > div > div.bandBlurb > a:nth-child(6)",
+      "guideLink":"#homeContent > div.band.learn > div > div.bandBlurb > a:nth-child(8)",
+      "footerLogo": "#footerLogo",
+      "systemStatus": "#rStudioFooter > div > div:nth-child(1) > div.footerMenu > a:nth-child(2)",
+      "termsAndConditions": "#rStudioFooter > div > div:nth-child(1) > div.footerMenu > a:nth-child(1)",
+      "copyright": "#copyright",
+      "twitter": "#logos > div:nth-child(1) > a.footerLogo.twitter",
+      "github": "#logos > div:nth-child(1) > a.footerLogo.gitHub",
+      "linkedin": "#logos > div:nth-child(1) > a.footerLogo.linkedIn",
+      "facebook": "#logos > div:nth-child(1) > a.footerLogo.facebook"
     },
     "loginPage": {
       "userInput": "body > div > div > div > form:nth-child(1) > input[type=\"email\"]:nth-child(2)",

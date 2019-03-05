@@ -41,7 +41,7 @@ class CloudIdeLandingPage extends LandingPage {
   // following 2 elements are the login and sign in widgets
   // that menuToggler exposes or hides
   get accountLinkLogin() { return $(selectors.cloudIde.landingPage.accountNavLogin); }
-  get accountLinkSignup() { return $(selectors.cloudIde.landingPageSelectors.accountNavSignup); }
+  get accountLinkSignup() { return $(selectors.cloudIde.landingPage.accountNavSignup); }
   // element for page load success check
   get footerWidgetToCheckPageLoad() { return $(selectors.cloudIde.landingPage.footerLogo); }
   //
