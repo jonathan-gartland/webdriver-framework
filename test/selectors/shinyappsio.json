@@ -24,6 +24,23 @@
   },
 
   "dashboardPage" : {
+    "menuToggle": "#header > header > div.top-nav > ul.nav-left.list-unstyled > li > a",
+    "accountLink": "#nav > li:nth-child(3) > a",
+    "applicationsLink": "#nav > li:nth-child(2) > a",
+    "dashboardLink": "#nav > li.active > a",
+    "helpLink": "#header > header > div.top-nav > ul.nav-right.pull-right.list-unstyled > li:nth-child(1) > a",
+    "accountsMenu": "#header > header > div.top-nav > ul.nav-right.pull-right.list-unstyled > li.dropdown.text-normal.nav-accounts.open > ul",
+    "userMenu": "#header > header > div.top-nav > ul.nav-right.pull-right.list-unstyled > li.dropdown.text-normal.nav-profile.open > a",
+    "profileLink": "#header > header > div.top-nav > ul.nav-right.pull-right.list-unstyled > li.dropdown.text-normal.nav-profile.open > ul > li:nth-child(1) > a",
+    "tokenLink": "#header > header > div.top-nav > ul.nav-right.pull-right.list-unstyled > li.dropdown.text-normal.nav-profile.open > ul > li:nth-child(2) > a",
+    "logoutLink": "#header > header > div.top-nav > ul.nav-right.pull-right.list-unstyled > li.dropdown.text-normal.nav-profile.open > ul > li:nth-child(3) > a",
+    "showSecretButton": "#show-secret-btn",
+    "accountDetailDiv": "#content > section > div > section > div.panel-body > div:nth-child(3) > div.panel-body > div.row.ng-scope > div.col-sm-8 > pre",
+    "menuApplicationsLink": "#nav > li.open > ul > li:nth-child(1) > a",
+    "runningApplicationsLink": "#nav > li.open > ul > li:nth-child(2) > a",
+    "sleepingApplicationsLink": "#nav > li.open > ul > li:nth-child(3) > a",
+    "acrchivedApplicationsLink": "#nav > li.open > ul > li:nth-child(4) > a",
+    "panelHeadingTitle": "#content > section > div.page.page-application-list.ng-scope > section > div.panel-heading",
 
   }
 
