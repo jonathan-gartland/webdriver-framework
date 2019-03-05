@@ -16,9 +16,9 @@ export default class LandingPage extends Page {
     browser.pause(3000)
   }
 
-  onLandingPage(urlSnippet) {
-    return browser.getUrl().indexOf(urlSnippet) > -1;
-  }
+  // onLandingPage(urlSnippet) {
+  //   return super.onPage(urlSnippet);
+  // }
 
   // getPageSelectors(pageName) {
   //   return super.pageSelectors(pageName);

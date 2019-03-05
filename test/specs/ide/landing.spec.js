@@ -16,7 +16,7 @@ describe('RStudio.cloud Landing page', function () {
     // todo this should be coming in as part of the env arg
     // or strip it from browser.baseUrl before adding here
     // hard coding for now
-    assert(IdeLandingPage.onLandingPage('rstudio.cloud'));
+    assert(IdeLandingPage.onLandingPage());
     // console.log(selectors.cloudIde.landingPageSelectors.menuToggler);
   })
 })
