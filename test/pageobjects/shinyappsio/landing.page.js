@@ -9,11 +9,12 @@ import assert from 'assert';
 class ShinyappsioLandingPage extends LandingPage {
 
 
-  get loginLinkNamedDashboardForSomeReason(){
+  get loginDashboardLink(){
     return $('#navbar-collapse-1 > ul > li:nth-child(5) > a');
   }
 
-  // better way thn caling to super...probably
+  // better way than calling to super...probably
+
   waitForLandingPageToLoad() {
     // use the footer element being visible as a check for successful page load
     if(!super.footer.isDisplayed()){
@@ -22,7 +23,7 @@ class ShinyappsioLandingPage extends LandingPage {
   }
 
   loginAkaDashboard() {
-    this.loginLinkNamedDashboardForSomeReason.click();
+    this.loginDashboardLink.click();
   }
 
 }
