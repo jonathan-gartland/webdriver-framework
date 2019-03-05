@@ -1,13 +1,13 @@
 {
-  "shinyappsioLandingPageSelectors": {
+  "landingPage": {
 
   },
 
-  "shinyappsioLoginPageSelectors" : {
+  "loginPage" : {
 
   },
 
-  "shinyappsioDashboardPageSelectors" : {
+  "dashboardPage" : {
 
   }
 
