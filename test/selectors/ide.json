@@ -54,7 +54,10 @@
     "accountPopUp": {
       "modalDialog": "#main > div:nth-child(4) > div > div",
       "submitButton": "#main > div:nth-child(4) > div > div > form > div.actions > button",
-      "accountFromList": "#main > div:nth-child(4) > div > div > form > div.chunk.formSection > div.radioListBox.max5 > div:nth-child(1)"
+      "accountFromList": "#main > div:nth-child(4) > div > div > form > div.chunk.formSection > div.radioListBox.max5 > div:nth-child(1) > label",
+      "modalTitleLabel": "#main > div:nth-child(4) > div > div > div",
+      "formSection": "#main > div:nth-child(4) > div > div > form > div.chunk.formSection"
+
     }
   }
 }

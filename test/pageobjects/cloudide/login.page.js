@@ -1,6 +1,7 @@
 import Page from '../page';
 import LandingPage from "./landing.page";
 import ProjectPage from "./project.page";
+import AccountPopUpPage from "./account.select.popup.page.js";
 const selectors = require('../../selectors/ide.json');
 
 
@@ -21,6 +22,7 @@ class LoginPage extends Page {
   get signUpLink() { return $(selectors.cloudIde.loginPage.signUpLink); }
   get termsOfServiceLink() { return $(selectors.cloudIde.loginPage.termsOfServiceLink); }
   get copyrightDiv() { return $(selectors.cloudIde.loginPage.copyrightDiv); }
+
 
   // Login via username password function
   logInFromLandingPage() {
@@ -58,6 +60,13 @@ class LoginPage extends Page {
 
   validateUserLoggedIn() {
     // todo replace with a wait for element type validation
+
+
+    // if(AccountPopUpPage.popUpIsOpen()) {
+    //   AccountPopUpPage.accountFromList.click();
+    //   AccountPopUpPage.submitButton.click();
+    // }
+
     ProjectPage.validateProjectPageOpened();
 
   }
