@@ -35,7 +35,21 @@
       "copyrightDiv": "#copyright"
     },
     "projectPage": {
-
+      "spaceNavToggler": "#menuToggler",
+      "yourProjects": "#main > div.band.pushFooter > div > div > div.majorColumn > div.sectionTitle.flex > span",
+      "newProjectButton": "#main > div.band.pushFooter > div > div > div.majorColumn > div.sectionTitle.flex > div > span > button",
+      "yourWorkspace": "#navPanel > div.panelContents > div.navMenu > div.spaceMenu.mobileSubsOnly > div.menu > a.menuItem.space.nullSpace.active",
+      "newSpace": "#navPanel > div.panelContents > div.navMenu > div.spaceMenu.mobileSubsOnly > div.menu > div.menuItem.newSpace",
+      "learnLink": "#navPanel > div.panelContents > div.navMenu > div:nth-child(2)",
+      "infoLabel": "#navPanel > div.panelContents > div.navMenu > div:nth-child(4)",
+      "systemStatus": "#navPanel > div.panelContents > div.navMenu > div.spaceMenu.mobileSubsOnly > div.menu > div.menuItem.newSpace",
+      "termsAndConditions": "#navPanel > div.panelContents > div.navMenu > div:nth-child(5) > div > a.menuItem.legalDoc",
+      "feedbackLink": "#navPanel > div.panelContents > div.navMenu > div:nth-child(3) > div > a.menuItem.community",
+      "cheatSheets": "#navPanel > div.panelContents > div.navMenu > div:nth-child(3) > div > a.menuItem.cheatSheets",
+      "datacampLink":"#navPanel > div.panelContents > div.navMenu > div:nth-child(3) > div > a.menuItem.dataCampCourses",
+      "primersLink": "#navPanel > div.panelContents > div.navMenu > div:nth-child(3) > div > a.menuItem.primers",
+      "whatsNew": "#navPanel > div.panelContents > div.navMenu > div:nth-child(3) > div > a.menuItem.newFeatures",
+      "guideLink": "#navPanel > div.panelContents > div.navMenu > div:nth-child(3) > div > a.menuItem.guide"
     },
     "spacePage": {
 
