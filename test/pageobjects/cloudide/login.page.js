@@ -1,6 +1,9 @@
 import Page from '../page';
 import LandingPage from "./landing.page";
 import ProjectPage from "./project.page";
+import AccountPopUpPage from "./account.select.popup.page.js";
+const selectors = require('../../selectors/ide.json');
+
 
 /**
  Stub code, again mostly copied from https://webdriver.io/docs/pageobjects.html
@@ -10,15 +13,16 @@ import ProjectPage from "./project.page";
 class LoginPage extends Page {
 
   // Elements from our login form page
-  get userInput() { return $('body > div > div > div > form:nth-child(1) > input[type="email"]:nth-child(2)'); }
-  get passWord() { return $('body > div > div > div > form:nth-child(1) > input[type="password"]:nth-child(3)'); }
-  get loginButton() { return $('body > div > div > div > form:nth-child(1) > button'); }
-  get loginGoogleButton() { return $('#login-form-google'); }
-  get loginGithubButton() { return $('#login-form-github'); }
-  get forgotPasswordLink() { return $('body > div > div > div > section > p > a:nth-child(1)'); }
-  get signUpLink() { return $('body > div > div > div > section > p > a:nth-child(2)'); }
-  get termsOfServiceLink() { return $('body > div > div > div > section > div > a'); }
-  get copyrightDiv() { return $('#copyright'); }
+  get userInput() { return  $(selectors.cloudIde.loginPage.userInput); }
+  get passWord() { return $(selectors.cloudIde.loginPage.passWord); }
+  get loginButton() { return $(selectors.cloudIde.loginPage.loginButton); }
+  get loginGoogleButton() { return $(selectors.cloudIde.loginPage.loginGoogleButton); }
+  get loginGithubButton() { return $(selectors.cloudIde.loginPage.loginGithubButton); }
+  get forgotPasswordLink() { return $(selectors.cloudIde.loginPage.forgotPasswordLink); }
+  get signUpLink() { return $(selectors.cloudIde.loginPage.signUpLink); }
+  get termsOfServiceLink() { return $(selectors.cloudIde.loginPage.termsOfServiceLink); }
+  get copyrightDiv() { return $(selectors.cloudIde.loginPage.copyrightDiv); }
+
 
   // Login via username password function
   logInFromLandingPage() {
@@ -43,6 +47,7 @@ class LoginPage extends Page {
   verifyPageElementsRenderForLogin() {
     if(!this.copyrightDiv.isDisplayed()){
       this.copyrightDiv.waitForDisplayed(10000);
+
     }
   }
 
@@ -50,6 +55,19 @@ class LoginPage extends Page {
     this.userInput.setValue(userName);
     this.passWord.setValue(passWord);
     this.loginButton.click();
+
+  }
+
+  validateUserLoggedIn() {
+    // todo replace with a wait for element type validation
+
+
+    // if(AccountPopUpPage.popUpIsOpen()) {
+    //   AccountPopUpPage.accountFromList.click();
+    //   AccountPopUpPage.submitButton.click();
+    // }
+
+    ProjectPage.validateProjectPageOpened();
 
   }
 

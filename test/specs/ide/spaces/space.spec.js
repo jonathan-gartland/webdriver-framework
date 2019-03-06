@@ -18,11 +18,9 @@ describe('Project page', () => {
 
     ProjectPage.validateProjectPageOpened();
 
-    ProjectPage.openNewProject();
 
     // todo : args from command
 
   });
 
 });
-

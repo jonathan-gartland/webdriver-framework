@@ -7,14 +7,7 @@ import Page from '../page';
  */
 class IdePage extends Page {
 
-
-  open() {
-    //super.open('login');
-  }
-
-  submit() {
-    //this.submitBtn.click();
-  }
+  // maybe put the iframe in this, i think that makes the most sense.git pull origin master
 
 }
 

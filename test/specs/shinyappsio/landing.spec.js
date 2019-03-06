@@ -13,8 +13,10 @@ describe('Shinyapps.io Landing page', function () {
   it ('should be the landing page for Shinyapps.io', function () {
 
     ShinyappsioLandingPage.open();
-    ShinyappsioLandingPage.waitForLandingPageToLoad();
-    assert(ShinyappsioLandingPage.onShinyappsioLandingPage());
+    //ShinyappsioLandingPage.waitForLandingPageToLoad();
+    // again, like ide, this should be  collected from process.env
+    // or a browser.baseUrl
+    assert(ShinyappsioLandingPage.onLandingPage('shinyapps.io'));
     // assert we are on landing page here
 
 

@@ -15,5 +15,14 @@ export default class LandingPage extends Page {
     super.open('/');
     browser.pause(3000)
   }
+
+  // onLandingPage(urlSnippet) {
+  //   return super.onPage(urlSnippet);
+  // }
+
+  // getPageSelectors(pageName) {
+  //   return super.pageSelectors(pageName);
+  // }
+
 }
 
