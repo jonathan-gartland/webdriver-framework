@@ -12,28 +12,6 @@ const selectors = require('../../selectors/ide.json');
  */
 class CloudIdeLandingPage extends LandingPage {
 
-  // first pass - critical elements to get logged in
-  /*
-  dynamically set these up? would help speed up development
-  adding features.
-
-
-  for _ in cloudIde.landingPageSelectors {
-    get _() { return $(selectors.cloudIde.landingPageSelectors._); }
-  }
-
-  "landingPageSelectors": {
-      "menuLinks": "'#currentUser > div > div.menuItems > div > a'",
-      "menuToggler": "'#menuToggler'",
-      "accountNavLogin": "'#userPanel > div > div.menu > a.menuItem.login'",
-      "accountNavSignup": "'#userPanel > div > div.menu > a.menuItem.signup'",
-      "footerLogo": "'#footerLogo'"
-    },
-
-   */
-
-  // login and sign in links --------------------------------------------------
-  // todo : implement tests to validate they work
   get menuLinks() { return $(selectors.cloudIde.landingPage.menuLinks); }
   // The menuToggler element manages the visibility and focus for
   // the element: css class sidePanel id userPanel
