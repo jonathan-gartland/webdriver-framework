@@ -15,8 +15,24 @@ class ProjectPage extends Page {
   // similar to above
   get yourProjects() { return $(selectors.cloudIde.projectPage.yourProjects); }
 
+  get newProjectButton() { return $(selectors.cloudIde.projectPage.newProjectButton); }
+
+  get ideConsole() { return $(selectors.cloudIde.projectPage.rstudioConsole); }
+
+  // message while waiting: #contentContainer > div > div
+
   // content ~= project page object in this case, opening the project
   // will be an ide/iframe page object
+
+  openNewProject() {
+    if (this.newProjectButton.isDisplayed()) {
+      this.newProjectButton.click();
+    }
+
+    this.ideConsole.waitForDisplayed(50000);
+  }
+
+
 
 
   get systemStatus() { return $(selectors.cloudIde.projectPage.systemStatus); }

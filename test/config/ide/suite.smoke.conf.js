@@ -21,7 +21,8 @@ exports.config = {
   //
   specs: [
     './test/specs/ide/landing.spec.js',
-    './test/specs/ide/login/login.spec.js'
+    //'./test/specs/ide/login/login.spec.js',
+    './test/specs/ide/project/project.spec.js'
     // './test/specs/ide/smoke.spec.js',
   ],
   // Patterns to exclude.
@@ -57,7 +58,7 @@ exports.config = {
       'goog:chromeOptions': {
         // to run chrome headless the following flags are required
         // (see https://developers.google.com/web/updates/2017/04/headless-chrome)
-        args: ['--headless', '--disable-gpu'],
+        //args: ['--headless', '--disable-gpu'],
       }
     },
 

@@ -20,7 +20,7 @@ exports.config = {
     // directory is where your package.json resides, so `wdio` will be called from there.
     //
     specs: [
-      './test/specs/ide/spaces/space.spec.js'
+      './test/specs/ide/projects/project.spec.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -55,7 +55,7 @@ exports.config = {
         'goog:chromeOptions': {
           // to run chrome headless the following flags are required
           // (see https://developers.google.com/web/updates/2017/04/headless-chrome)
-          args: ['--headless', '--disable-gpu'],
+          //args: ['--headless', '--disable-gpu'],
         }
       },
 
@@ -111,7 +111,7 @@ exports.config = {
     //
     // Set a base URL in order to shorten url command calls. If your url parameter starts
     // with "/", then the base url gets prepended.
-    baseUrl: 'https://staging.rstudio.cloud',
+    baseUrl: 'https://rstudio.cloud',
     waitforTimeout: 10000,            // Default timeout for all waitFor* commands.
     connectionRetryTimeout: 90000,    // Default timeout in milliseconds for request if Selenium Grid doesn't send response
     connectionRetryCount: 3,          // Default request retries count
