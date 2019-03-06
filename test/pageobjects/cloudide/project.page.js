@@ -17,7 +17,7 @@ class ProjectPage extends Page {
 
   get newProjectButton() { return $(selectors.cloudIde.projectPage.newProjectButton); }
 
-  get ideConsole() { return $(selectors.cloudIde.projectPage.rstudioConsole); }
+  //get ideConsole() { return $(selectors.cloudIde.projectPage.rstudioConsole); }
 
   // message while waiting: #contentContainer > div > div
 
@@ -29,7 +29,7 @@ class ProjectPage extends Page {
       this.newProjectButton.click();
     }
 
-    this.ideConsole.waitForDisplayed(50000);
+    //this.ideConsole.waitForDisplayed(50000);
   }
 
 
