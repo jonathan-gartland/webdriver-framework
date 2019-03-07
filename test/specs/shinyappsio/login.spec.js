@@ -23,8 +23,8 @@ describe('login to dashboard', () => {
     LoginPage.waitForLoginFormToLoad();
 
     LoginPage.loginWithUserNamePasswordCombo(
-      'connect-qa+8000@rstudio.com',
-      'rsctest99'
+      process.env.LOGIN_NAME,
+      process.env.PASSWORD
     );
 
     DashboardPage.waitForDashboardPageToLoad();

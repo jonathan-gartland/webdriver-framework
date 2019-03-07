@@ -1,0 +1,43 @@
+{
+  "shinyappsIo": {
+    "landingPage": {
+      "headerLogo": "body > header > div > div > div.navbar-header > div",
+      "loginOrDashboardLink": "#navbar-collapse-1 > ul > li:nth-child(5) > a",
+      "supportLink": "#navbar-collapse-1 > ul > li:nth-child(4) > a",
+      "pricingLink": "#navbar-collapse-1 > ul > li:nth-child(3) > a",
+      "featuresLink": "#navbar-collapse-1 > ul > li:nth-child(2) > a",
+      "homeLink": "#navbar-collapse-1 > ul > li:nth-child(1) > a"
+    },
+    "loginPage": {
+      "logo": "#content > section > div > div:nth-child(3) > section > h1 > a",
+      "emailInput": "#content > section > div > div.auth-body > div > div > form > fieldset > div:nth-child(1) > div > input",
+      "passwordInput": "#content > section > div > div.auth-body > div > div > form > fieldset > div:nth-child(2) > div > input",
+      "loginButton": "#content > section > div > div.auth-body > div > div > form > fieldset > div:nth-child(4) > button",
+      "loginGoogle": "#content > section > div > div.auth-body > div > div > a:nth-child(5)",
+      "loginGithub": "#content > section > div > div.auth-body > div > div > a:nth-child(6)",
+      "forgotPasswordLink": "#content > section > div > div.auth-body > div > div > a:nth-child(6)",
+      "signUpLink": "#content > section > div > div.auth-body > div > div > section > p > a:nth-child(3)",
+      "termsofuseLink": "#content > section > div > div.auth-body > div > div > section > p > a:nth-child(3)",
+      "footer": "#footer"
+    },
+    "dashboardPage": {
+      "menuToggle": "#header > header > div.top-nav > ul.nav-left.list-unstyled > li > a",
+      "accountLink": "#nav > li:nth-child(3) > a",
+      "applicationsLink": "#nav > li:nth-child(2) > a",
+      "dashboardLink": "#nav > li.active > a",
+      "helpLink": "#header > header > div.top-nav > ul.nav-right.pull-right.list-unstyled > li:nth-child(1) > a",
+      "accountsMenu": "#header > header > div.top-nav > ul.nav-right.pull-right.list-unstyled > li.dropdown.text-normal.nav-accounts.open > ul",
+      "userMenu": "#header > header > div.top-nav > ul.nav-right.pull-right.list-unstyled > li.dropdown.text-normal.nav-profile.open > a",
+      "profileLink": "#header > header > div.top-nav > ul.nav-right.pull-right.list-unstyled > li.dropdown.text-normal.nav-profile.open > ul > li:nth-child(1) > a",
+      "tokenLink": "#header > header > div.top-nav > ul.nav-right.pull-right.list-unstyled > li.dropdown.text-normal.nav-profile.open > ul > li:nth-child(2) > a",
+      "logoutLink": "#header > header > div.top-nav > ul.nav-right.pull-right.list-unstyled > li.dropdown.text-normal.nav-profile.open > ul > li:nth-child(3) > a",
+      "showSecretButton": "#show-secret-btn",
+      "accountDetailDiv": "#content > section > div > section > div.panel-body > div:nth-child(3) > div.panel-body > div.row.ng-scope > div.col-sm-8 > pre",
+      "menuApplicationsLink": "#nav > li.open > ul > li:nth-child(1) > a",
+      "runningApplicationsLink": "#nav > li.open > ul > li:nth-child(2) > a",
+      "sleepingApplicationsLink": "#nav > li.open > ul > li:nth-child(3) > a",
+      "archivedApplicationsLink": "#nav > li.open > ul > li:nth-child(4) > a",
+      "panelHeadingTitle": "#content > section > div.page.page-application-list.ng-scope > section > div.panel-heading"
+    }
+  }
+}
