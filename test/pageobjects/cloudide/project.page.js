@@ -14,8 +14,14 @@ class ProjectPage extends Page {
   get spaceNavToggler() { return $(selectors.cloudIde.projectPage.spaceNavToggler); }
   // similar to above
   get yourProjects() { return $(selectors.cloudIde.projectPage.yourProjects); }
-
   get newProjectButton() { return $(selectors.cloudIde.projectPage.newProjectButton); }
+  get systemStatus() { return $(selectors.cloudIde.projectPage.systemStatus); }
+
+  get iFrame() { return $('#rstudio'); }
+
+  get iFrameRStudioElement() { return $('#rstudio_console_output'); }
+
+
 
   //get ideConsole() { return $(selectors.cloudIde.projectPage.rstudioConsole); }
 
@@ -28,14 +34,13 @@ class ProjectPage extends Page {
     if (this.newProjectButton.isDisplayed()) {
       this.newProjectButton.click();
     }
-
-    //this.ideConsole.waitForDisplayed(50000);
+    // var iFrame = "//*[@id='rstudio']";
+    // iFrame.waitForExist(30000)
+    // browser.click(iFrame);
   }
 
 
 
-
-  get systemStatus() { return $(selectors.cloudIde.projectPage.systemStatus); }
 
 
   validateProjectPageOpened(){
