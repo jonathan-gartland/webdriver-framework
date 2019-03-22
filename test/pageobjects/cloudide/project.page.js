@@ -1,4 +1,4 @@
-import Page from '../page';
+gaimport Page from '../page';
 import assert from 'assert';
 const selectors = require('../../selectors/ide.json');
 /**
