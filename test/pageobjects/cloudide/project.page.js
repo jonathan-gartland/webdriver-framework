@@ -1,6 +1,6 @@
-import Page from '../page';
-import assert from 'assert';
-const selectors = require('../../selectors/ide.json');
+import Page from "../page";
+import assert from "assert";
+const selectors = require("../../selectors/ide.json");
 /**
  Stub code, again mostly copied from https://webdriver.io/docs/pageobjects.html
  using as base pattern for rstudio.cloud interactions
