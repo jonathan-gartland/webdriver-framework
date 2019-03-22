@@ -8,3 +8,6 @@ errorShots/*
 npm-debug.log
 test/reports/allure-results/*
 test/reports/junit-results/*
+.vscode/*
+*.iml
+
