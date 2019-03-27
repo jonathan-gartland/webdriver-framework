@@ -34,7 +34,12 @@ class ProjectPage extends Page {
     if (this.newProjectButton.isDisplayed()) {
       this.newProjectButton.click();
     }
-    // var iFrame = "//*[@id='rstudio']";
+    var iFrame = "//*[@id='contentIFrame']"; //#contentIFrame
+
+    browser.waitForExist(iFrame);
+    var my_frame = $(iFrame).value;
+    browser.frame(my_frame);
+    console.log('****** >>>  here  <<< ******')
     // iFrame.waitForExist(30000)
     // browser.click(iFrame);
   }
