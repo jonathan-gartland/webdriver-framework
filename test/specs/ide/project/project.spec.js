@@ -5,6 +5,7 @@ import ProjectPage from '../../../pageobjects/cloudide/project.page';
 
 
 
+// noinspection Duplicates
 describe('Project page', () => {
 
   it('should be the project page for the test user', () => {
@@ -18,7 +19,7 @@ describe('Project page', () => {
 
     ProjectPage.validateProjectPageOpened();
 
-    ProjectPage.openNewProject();
+    //ProjectPage.openNewProject();
 
     // todo : args from command
 
