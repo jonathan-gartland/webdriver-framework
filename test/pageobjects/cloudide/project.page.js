@@ -17,13 +17,13 @@ class ProjectPage extends Page {
 
   get newProjectButton() { return $(selectors.cloudIde.projectPage.newProjectButton); }
 
-  get modalDialogDiv() { return $("#main > div:nth-child(4) > div"); }
-
   get accountSelectPopUp() { return $(selectors.cloudIde.accountPopUp.modalDialog); }
 
   get accountFieldToSelect() { return $(selectors.cloudIde.accountPopUp.accountFromList); }
 
   get accountSelectButton() { return $(selectors.cloudIde.accountPopUp.submitButton); }
+
+  get systemStatus() { return $(selectors.cloudIde.projectPage.systemStatus); }
 
   //get ideConsole() { return $(selectors.cloudIde.projectPage.rstudioConsole); }
 
@@ -41,11 +41,6 @@ class ProjectPage extends Page {
   }
 
 
-
-
-  get systemStatus() { return $(selectors.cloudIde.projectPage.systemStatus); }
-
-
   manageAccountSelectPopUp(){
     if (this.accountFieldToSelect.isExisting()){
       this.accountFieldToSelect.click();
@@ -53,22 +48,23 @@ class ProjectPage extends Page {
     }
   }
 
-    validateProjectPageOpened(){
+  validateProjectPageOpened(){
 
-    browser.debug();
-
-    if (this.modalDialogDiv.isExisting()){
-      this.accountSelectPopUp.waitForExist(10000);
-    }
-
+    // wait for the account pop up in case we need to select an account
+    this.accountSelectPopUp.waitForDisplayed(5000);
+    // and if it does show up,
+    // select the first account listed - this could be expanded to
+    // look for a specific account later
     if (this.accountSelectPopUp.isExisting()) {
-      this.manageAccountPopUp();
+      if (this.accountFieldToSelect.isExisting()) {
+        this.manageAccountSelectPopUp();
+      }
     }
 
     // Make sure we got logged in, if this passes we're good.
     browser.waitUntil(function() {
       return browser.getUrl().indexOf('/projects') > -1;
-    }, 30000);
+    }, 5000);
 
   }
 
