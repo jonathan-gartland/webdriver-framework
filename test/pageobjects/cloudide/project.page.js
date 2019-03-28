@@ -53,7 +53,7 @@ class ProjectPage extends Page {
     }
   }
 
-  validateProjectPageOpened(){
+    validateProjectPageOpened(){
 
     browser.debug();
 

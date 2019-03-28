@@ -6,6 +6,6 @@ var merge = require('deepmerge');
 
 exports.config = merge(baseConf.config, {
 
-  baseUrl: 'https://staging.rstudio.cloud',
+  baseUrl: 'https://rstudio.cloud',
 
 }, { clone: false });
