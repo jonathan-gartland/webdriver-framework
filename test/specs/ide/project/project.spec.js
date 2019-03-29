@@ -21,9 +21,28 @@ describe('Project page', () => {
 
     //ProjectPage.openNewProject();
 
+    //assert(ProjectPage.iFrameRStudioElement.isDisplayed() === true);
+
     // todo : args from command
 
   });
+
+  // it('should be the iframe of the new project', () => {
+  //   LoginPage.logInFromLandingPage();
+  //   LoginPage.waitForLoginFormToLoad();
+  //   LoginPage.verifyPageElementsRenderForLogin();
+  //   LoginPage.loginWithUserNamePasswordCombo(
+  //     process.env.LOGIN_NAME,
+  //     process.env.PASSWORD
+  //   );
+  //
+  //   ProjectPage.validateProjectPageOpened();
+  //
+  //   ProjectPage.openNewProject();
+  //
+  //
+  //
+  // });
 
 });
 

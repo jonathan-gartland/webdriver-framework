@@ -15,10 +15,16 @@ class ProjectPage extends Page {
   // similar to above
   get yourProjects() { return $(selectors.cloudIde.projectPage.yourProjects); }
   get newProjectButton() { return $(selectors.cloudIde.projectPage.newProjectButton); }
+
   get accountSelectPopUp() { return $(selectors.cloudIde.accountPopUp.modalDialog); }
   get accountFieldToSelect() { return $(selectors.cloudIde.accountPopUp.accountFromList); }
   get accountSelectButton() { return $(selectors.cloudIde.accountPopUp.submitButton); }
   get systemStatus() { return $(selectors.cloudIde.projectPage.systemStatus); }
+
+  get iFrame() { return $('#rstudio'); }
+
+  get iFrameRStudioElement() { return $('#rstudio_console_output'); }
+
   //get ideConsole() { return $(selectors.cloudIde.projectPage.rstudioConsole); }
 
   // message while waiting: #contentContainer > div > div
@@ -39,6 +45,15 @@ class ProjectPage extends Page {
       this.accountSelectButton.click();
     }
   }
+    // var iFrame = "//*[@id='rstudio']";
+    // iFrame.waitForExist(30000)
+    // browser.click(iFrame);
+
+
+
+
+
+
 
   validateProjectPageOpened(){
     // wait for the account pop up in case we need to select an account
