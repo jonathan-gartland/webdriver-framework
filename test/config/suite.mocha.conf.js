@@ -1,6 +1,6 @@
 //to use debug option run `DEBUG=true followed by your .conf.js`
-const defaultTimeoutInterval  = process.env.DEBUG ? (60 * 60 * 500) : 90000;
-
+//const defaultTimeoutInterval  = process.env.DEBUG ? (60 * 60 * 500) : 90000;
+const defaultTimeoutInterval  = process.env.DEBUG ? (60 * 60 * 3500) : 9000000;
 exports.config = {
     //
     // ====================

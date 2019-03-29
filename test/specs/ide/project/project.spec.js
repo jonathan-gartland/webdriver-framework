@@ -5,6 +5,7 @@ import ProjectPage from '../../../pageobjects/cloudide/project.page';
 
 
 
+// noinspection Duplicates
 describe('Project page', () => {
 
   it('should be the project page for the test user', () => {
@@ -18,11 +19,30 @@ describe('Project page', () => {
 
     ProjectPage.validateProjectPageOpened();
 
-    ProjectPage.openNewProject();
+    //ProjectPage.openNewProject();
+
+    //assert(ProjectPage.iFrameRStudioElement.isDisplayed() === true);
 
     // todo : args from command
 
   });
+
+  // it('should be the iframe of the new project', () => {
+  //   LoginPage.logInFromLandingPage();
+  //   LoginPage.waitForLoginFormToLoad();
+  //   LoginPage.verifyPageElementsRenderForLogin();
+  //   LoginPage.loginWithUserNamePasswordCombo(
+  //     process.env.LOGIN_NAME,
+  //     process.env.PASSWORD
+  //   );
+  //
+  //   ProjectPage.validateProjectPageOpened();
+  //
+  //   ProjectPage.openNewProject();
+  //
+  //
+  //
+  // });
 
 });
 

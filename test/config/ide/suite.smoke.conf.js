@@ -1,7 +1,7 @@
 // import baseConf
 // import { merge } from  'deepmerge';
-var ideConf = require('./ide.base.conf.js');
-var merge = require('deepmerge');
+var ideConf = require("./ide.base.conf.js");
+var merge = require("deepmerge");
 
 // have main config file as default but overwrite environment specific information
 exports.config = merge(ideConf.config, {
@@ -16,7 +16,7 @@ exports.config = merge(ideConf.config, {
   //
   specs: [
     //'./test/specs/*.js',
-    './test/specs/ide/landing.spec.js',
+    //'./test/specs/ide/landing.spec.js',
     //'./test/specs/ide/login/login.spec.js',
     './test/specs/ide/project/project.spec.js'
     // './test/specs/ide/smoke.spec.js',
@@ -45,18 +45,18 @@ exports.config = merge(ideConf.config, {
   maxInstances: 15,
 
   capabilities: [
-    {
-      // maxInstances can get overwritten per capability. So if you have an in-house Selenium
-      // grid with only 5 Chrome instances available you can make sure that not more than
-      // 5 instances get started at a time.
-      maxInstances: 5,
-      browserName: 'chrome',
-      'goog:chromeOptions': {
-        // to run chrome headless the following flags are required
-        // (see https://developers.google.com/web/updates/2017/04/headless-chrome)
-        //args: ['--headless', '--disable-gpu'],
-      }
-    },
+    // {
+    //   // maxInstances can get overwritten per capability. So if you have an in-house Selenium
+    //   // grid with only 5 Chrome instances available you can make sure that not more than
+    //   // 5 instances get started at a time.
+    //   maxInstances: 5,
+    //   browserName: 'chrome',
+    //   'goog:chromeOptions': {
+    //     // to run chrome headless the following flags are required
+    //     // (see https://developers.google.com/web/updates/2017/04/headless-chrome)
+    //     args: ['--headless', '--disable-gpu'],
+    //   }
+    // },
 
     {
       // maxInstances can get overwritten per capability. So if you have an in-house Selenium
@@ -66,7 +66,7 @@ exports.config = merge(ideConf.config, {
       browserName: 'firefox',
       "moz:firefoxOptions": {
         // flag to activate Firefox headless mode (see https://github.com/mozilla/geckodriver/blob/master/README.md#firefox-capabilities for more details about moz:firefoxOptions)
-        //args: ['-headless']
+        args: ['-headless']
       }
     },
 
