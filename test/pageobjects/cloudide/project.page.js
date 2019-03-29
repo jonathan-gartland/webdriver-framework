@@ -22,12 +22,9 @@ class ProjectPage extends Page {
   get accountSelectButton() { return $(selectors.cloudIdeCss.accountPopUp.submitButton); }
   get systemStatus() { return $(selectors.cloudIdeCss.projectPage.systemStatus); }
 
-  // get iFrame() { return $('#rstudio'); }
-
-  // get iFrameRStudioElement() { return $('#rstudio_console_output'); }
-
-  //get ideConsole() { return $(selectors.cloudIdeCss.projectPage.rstudioConsole); }
-
+  get iFrame() { return $('#rstudio'); }
+  get iFrameRStudioElement() { return $('#rstudio_console_output'); }
+  // get ideConsole() { return $(selectors.cloudIdeCss.projectPage.rstudioConsole); }
   // message while waiting: #contentContainer > div > div
 
   // content ~= project page object in this case, opening the project
@@ -40,35 +37,13 @@ class ProjectPage extends Page {
   }
 
   openExistingProject() {
-
     //browser.debug();
     browser.pause(5000);
     this.existingProjectLink.waitForDisplayed(10000)
-
     if (this.existingProjectLink.isExisting()) {
       this.existingProjectLink.click();
     }
     browser.pause(5000);
-
-
-    //browser.debug();
-    // if (this.existingProjectLink.isExisting()) {
-    //   browser.debug();
-    //   this.existingProjectLink.click();
-    //
-    //   //$('#rstudio').waitForExist(90000);
-    //   //$('#contentFrame').waitForExist(90000);
-    //   $('#rstudio_console_output').waitForExist(90000);
-    //   if($('#rstudio_console_output').isExisting()) {
-    //     browser.debug();
-    //   }
-      //browser.switchToFrame('#rstudio_console_output')
-      //console.log($('#rstudio_console_output').isExisting());
-
-    //}
-    //browser.debug();
-    //browser.switchToFrame('#rstudio_console_output')
-
   }
 
   openNewProject() {
@@ -77,14 +52,15 @@ class ProjectPage extends Page {
     }
 
 
+
     //var iFrame = "//*[@id='contentIFrame']"; //#contentIFrame
 
     //browser.waitForExist(iFrame);
     //var my_frame = $(iFrame).value;
     //browser.frame(my_frame);
-    // console.log('****** >>>  here  <<< ******')
-
     //this.ideConsole.waitForDisplayed(50000);
+
+
   }
 
   manageAccountSelectPopUp(){
