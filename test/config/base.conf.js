@@ -128,7 +128,7 @@ exports.config = {
   framework: 'mocha',
   mochaOpts: {
     ui: 'bdd',
-    timeout: 90000 * 3600,
+    timeout: 90000 * 3600,  // * 1 hour ---way too long, but just for testing
     compilers: ['js:@babel/register'],
   },
 
