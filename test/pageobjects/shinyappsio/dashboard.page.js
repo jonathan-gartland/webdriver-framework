@@ -1,6 +1,6 @@
-import Page from '../page';
-import assert from 'assert';
-const selectors = require('../../selectors/shinyappsio.json');
+import Page from "../page";
+import assert from "assert";
+const selectors = require("../../selectors/shinyappsio.json");
 
 /**
  Stub code, again mostly copied from https://webdriver.io/docs/pageobjects.html

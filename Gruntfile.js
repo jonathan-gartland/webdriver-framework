@@ -4,7 +4,7 @@ module.exports = function(grunt) {
         pkg: grunt.file.readJSON('package.json'),
         webdriver: {
             test: {
-                configFile: './test/config/suite.mocha.conf.js'
+                configFile: './test/config/ide/suite.smoke.conf.js'
             },
             // test-mobile: {
             //     configFile: './test/config/suite.appium.conf.js'
