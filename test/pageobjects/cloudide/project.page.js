@@ -48,7 +48,7 @@ class ProjectPage extends Page {
     if (this.existingProjectLink.isExisting()) {
       this.existingProjectLink.click();
     }
-    browser.pause(15000);
+    browser.pause(5000);
 
 
     //browser.debug();

@@ -4,10 +4,10 @@ const selectors = require('../../selectors/ide.json');
 
 class AccountPopUpPage extends Page {
 
-  get modalDialog() { return $(selectors.cloudIde.accountPopUp.modalDialog); }
-  get accountFromList() { return $(selectors.cloudIde.accountPopUp.accountFromList); }
-  get submitButton() { return $(selectors.cloudIde.accountPopUp.submitButton); }
-  get modalTitle() { return $(selectors.cloudIde.accountPopUp.modalTitleLabel); }
+  get modalDialog() { return $(selectors.cloudIdeCss.accountPopUp.modalDialog); }
+  get accountFromList() { return $(selectors.cloudIdeCss.accountPopUp.accountFromList); }
+  get submitButton() { return $(selectors.cloudIdeCss.accountPopUp.submitButton); }
+  get modalTitle() { return $(selectors.cloudIdeCss.accountPopUp.modalTitleLabel); }
 
 
 
