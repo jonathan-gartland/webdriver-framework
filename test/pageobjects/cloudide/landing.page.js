@@ -1,5 +1,5 @@
 import LandingPage from '../landing.page';
-import cloudIde from '../../selectors/ide.json'
+import cloudIdeCss from '../../selectors/ide.json'
 import assert from 'assert';
 import fs from 'fs';
 const selectors = require('../../selectors/ide.json');
@@ -12,16 +12,16 @@ const selectors = require('../../selectors/ide.json');
  */
 class CloudIdeLandingPage extends LandingPage {
 
-  get menuLinks() { return $(selectors.cloudIde.landingPage.menuLinks); }
+  get menuLinks() { return $(selectors.cloudIdeCss.landingPage.menuLinks); }
   // The menuToggler element manages the visibility and focus for
   // the element: css class sidePanel id userPanel
-  get menuToggler() { return $(selectors.cloudIde.landingPage.menuToggler); }
+  get menuToggler() { return $(selectors.cloudIdeCss.landingPage.menuToggler); }
   // following 2 elements are the login and sign in widgets
   // that menuToggler exposes or hides
-  get accountLinkLogin() { return $(selectors.cloudIde.landingPage.accountNavLogin); }
-  get accountLinkSignup() { return $(selectors.cloudIde.landingPage.accountNavSignup); }
+  get accountLinkLogin() { return $(selectors.cloudIdeCss.landingPage.accountNavLogin); }
+  get accountLinkSignup() { return $(selectors.cloudIdeCss.landingPage.accountNavSignup); }
   // element for page load success check
-  get footerWidgetToCheckPageLoad() { return $(selectors.cloudIde.landingPage.footerLogo); }
+  get footerWidgetToCheckPageLoad() { return $(selectors.cloudIdeCss.landingPage.footerLogo); }
   //
   // --------------------------------------------------------------------------
 
