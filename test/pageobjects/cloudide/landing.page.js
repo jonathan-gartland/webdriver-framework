@@ -44,7 +44,7 @@ class CloudIdeLandingPage extends LandingPage {
 
   }
 
-  loginViaAccountLink(){
+  loginViaAccountLink() {
     // used by login tests, moves user to log in form
     this.accountLinkLogin.click();
   }

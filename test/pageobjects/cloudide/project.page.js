@@ -15,13 +15,15 @@ class ProjectPage extends Page {
   // similar to above
   get yourProjects() { return $(selectors.cloudIde.projectPage.yourProjects); }
   get newProjectButton() { return $(selectors.cloudIde.projectPage.newProjectButton); }
+
+  get accountSelectPopUp() { return $(selectors.cloudIde.accountPopUp.modalDialog); }
+  get accountFieldToSelect() { return $(selectors.cloudIde.accountPopUp.accountFromList); }
+  get accountSelectButton() { return $(selectors.cloudIde.accountPopUp.submitButton); }
   get systemStatus() { return $(selectors.cloudIde.projectPage.systemStatus); }
 
-  get iFrame() { return $('#rstudio'); }
+  // get iFrame() { return $('#rstudio'); }
 
-  get iFrameRStudioElement() { return $('#rstudio_console_output'); }
-
-
+  // get iFrameRStudioElement() { return $('#rstudio_console_output'); }
 
   //get ideConsole() { return $(selectors.cloudIde.projectPage.rstudioConsole); }
 
@@ -34,28 +36,47 @@ class ProjectPage extends Page {
     if (this.newProjectButton.isDisplayed()) {
       this.newProjectButton.click();
     }
-    var iFrame = "//*[@id='contentIFrame']"; //#contentIFrame
 
-    browser.waitForExist(iFrame);
-    var my_frame = $(iFrame).value;
-    browser.frame(my_frame);
-    console.log('****** >>>  here  <<< ******')
+    //var iFrame = "//*[@id='contentIFrame']"; //#contentIFrame
+
+    //browser.waitForExist(iFrame);
+    //var my_frame = $(iFrame).value;
+    //browser.frame(my_frame);
+    // console.log('****** >>>  here  <<< ******')
+
+    //this.ideConsole.waitForDisplayed(50000);
+  }
+
+  manageAccountSelectPopUp(){
+    if (this.accountFieldToSelect.isExisting()){
+      this.accountFieldToSelect.click();
+      this.accountSelectButton.click();
+    }
+  }
+    // var iFrame = "//*[@id='rstudio']";
     // iFrame.waitForExist(30000)
     // browser.click(iFrame);
-  }
-
-
-
-
 
   validateProjectPageOpened(){
-    // Make sure we got logged in, if this passes we're good.
-    browser.waitUntil(function() {
-      return browser.getUrl().indexOf('/projects') > -1;
-    }, 30000);
+    // wait for the account pop up in case we need to select an account
+    //this.accountSelectPopUp.waitForDisplayed(5000);
+    browser.pause(5000)
+    // and if it does show up,
+    // select the first account listed - this could be expanded to
+    // look for a specific account later
+    if (this.accountSelectPopUp.isExisting()) {
+      if (this.accountFieldToSelect.isExisting()) {
+        this.manageAccountSelectPopUp();
+      }
+    }
+    else {
+      // Make sure we got logged in, if this passes we're good.
+      browser.waitUntil( () => {
+        return browser.getUrl().indexOf('/projects') > -1;
+      }, 5000);
 
+    }
   }
-
 }
 
 export default new ProjectPage();
