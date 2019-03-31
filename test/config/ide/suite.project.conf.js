@@ -1,5 +1,4 @@
-// import baseConf
-// import { merge } from  'deepmerge';
+
 const ideConf = require("./ide.base.conf.js");
 const merge = require("deepmerge");
 

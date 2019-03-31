@@ -1,7 +1,5 @@
-// import baseConf
-// import { merge } from  'deepmerge';
-var ideConf = require("./ide.base.conf.js");
-var merge = require("deepmerge");
+const ideConf = require("./ide.base.conf.js");
+const merge = require("deepmerge");
 
 // have main config file as default but overwrite environment specific information
 exports.config = merge(ideConf.config, {
@@ -16,14 +14,15 @@ exports.config = merge(ideConf.config, {
   //
   specs: [
     //'./test/specs/*.js',
-    //'./test/specs/ide/landing.spec.js',
+    //'./test/specs/ide/landing.spec.js",
     //'./test/specs/ide/login/login.spec.js',
-    './test/specs/ide/project/project.spec.js'
-    // './test/specs/ide/smoke.spec.js',
+    //"./test/specs/ide/project/project.spec.js",
+    "./test/specs/ide/spaces/space.spec.js"
+    // "./test/specs/ide/smoke.spec.js",
   ],
   // Patterns to exclude.
   exclude: [
-    // './test/specs/file-to-exclude.js'
+    // "./test/specs/file-to-exclude.js"
   ],
 
   //
