@@ -17,16 +17,14 @@ describe("Space NAV *TBD* ", () => {
         process.env.LOGIN_NAME,
         process.env.PASSWORD
     );
+
+    ProjectPage.validateProjectPageOpened();
+
   });
 
-  // counterintuitively, This is the view for the main workspace space
-  // calling it the project 'view' for now until i get a better convention...or not
-  it('should be the project page for the test user', () => {
-    ProjectPage.validateProjectPageOpened();
-  });
 
   it('should be the Workspace Nav on Project Page for the test user', () => {
-    ProjectPage.validateProjectPageOpened();
+    ProjectPage.validateSpaceNavIsVisible();
   });
 
 

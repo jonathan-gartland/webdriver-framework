@@ -14,11 +14,10 @@ exports.config = merge(ideConf.config, {
   //
   specs: [
     //'./test/specs/*.js',
-    //'./test/specs/ide/landing.spec.js",
-    //'./test/specs/ide/login/login.spec.js',
-    //"./test/specs/ide/project/project.spec.js",
+    "./test/specs/ide/landing.spec.js",
+    "./test/specs/ide/login/login.spec.js",
+    "./test/specs/ide/project/project.spec.js",
     "./test/specs/ide/spaces/space.spec.js"
-    // "./test/specs/ide/smoke.spec.js",
   ],
   // Patterns to exclude.
   exclude: [
@@ -57,17 +56,17 @@ exports.config = merge(ideConf.config, {
     //   }
     // },
 
-    {
-      // maxInstances can get overwritten per capability. So if you have an in-house Selenium
-      // grid with only 5 firefox instances available you can make sure that not more than
-      // 5 instances get started at a time.
-      maxInstances: 5,
-      browserName: 'firefox',
-      "moz:firefoxOptions": {
-        // flag to activate Firefox headless mode (see https://github.com/mozilla/geckodriver/blob/master/README.md#firefox-capabilities for more details about moz:firefoxOptions)
-        //args: ['-headless']
-      }
-    },
+    // {
+    //   // maxInstances can get overwritten per capability. So if you have an in-house Selenium
+    //   // grid with only 5 firefox instances available you can make sure that not more than
+    //   // 5 instances get started at a time.
+    //   maxInstances: 5,
+    //   browserName: 'firefox',
+    //   "moz:firefoxOptions": {
+    //     // flag to activate Firefox headless mode (see https://github.com/mozilla/geckodriver/blob/master/README.md#firefox-capabilities for more details about moz:firefoxOptions)
+    //     args: ['-headless']
+    //   }
+    // },
 
     //{
     //   // maxInstances can get overwritten per capability. So if you have an in-house Selenium

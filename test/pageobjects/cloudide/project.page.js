@@ -81,6 +81,10 @@ class ProjectPage extends Page {
 
     }
   }
+
+  validateSpaceNavIsVisible() {
+    assert(this.systemStatus.isExisting())
+  }
 }
 
 export default new ProjectPage();
