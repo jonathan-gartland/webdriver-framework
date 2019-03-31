@@ -6,42 +6,37 @@ import ProjectPage from '../../../pageobjects/cloudide/project.page';
 
 
 // noinspection Duplicates
-describe('Project page', () => {
+describe("Project Page *TBD* ", () => {
 
-  it('should be the project page for the test user', () => {
+  before( () => {
+
     LoginPage.logInFromLandingPage();
     LoginPage.waitForLoginFormToLoad();
     LoginPage.verifyPageElementsRenderForLogin();
     LoginPage.loginWithUserNamePasswordCombo(
-      process.env.LOGIN_NAME,
-      process.env.PASSWORD
+        process.env.LOGIN_NAME,
+        process.env.PASSWORD
     );
-
-    ProjectPage.validateProjectPageOpened();
-
-    //ProjectPage.openNewProject();
-
-    //assert(ProjectPage.iFrameRStudioElement.isDisplayed() === true);
-
-    // todo : args from command
-
   });
 
-  // it('should be the iframe of the new project', () => {
-  //   LoginPage.logInFromLandingPage();
-  //   LoginPage.waitForLoginFormToLoad();
-  //   LoginPage.verifyPageElementsRenderForLogin();
-  //   LoginPage.loginWithUserNamePasswordCombo(
-  //     process.env.LOGIN_NAME,
-  //     process.env.PASSWORD
-  //   );
-  //
-  //   ProjectPage.validateProjectPageOpened();
-  //
+  // counterintuitively, This is the view for the main workspace space
+  // calling it the project 'view' for now until i get a better convention...or not
+  it('should be the project page for the test user', () => {
+    ProjectPage.validateProjectPageOpened();
+  });
+
+   it('should open an existing project', () => {
+    ProjectPage.openExistingProject();
+    ProjectPage.validateProjectOpened();
+   });
+
+
+  // it('should be a new project for the test user', () => {
   //   ProjectPage.openNewProject();
-  //
-  //
-  //
+  // });
+
+  // it('should be the iframe of the new project', () => {
+
   // });
 
 });

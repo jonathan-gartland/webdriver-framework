@@ -1,7 +1,5 @@
-// import baseConf
-// import { merge } from  'deepmerge';
-var ideConf = require('../ide.base.conf.js');
-var merge = require('deepmerge');
+const ideConf = require("./ide.base.conf.js");
+const merge = require("deepmerge");
 
 // have main config file as default but overwrite environment specific information
 exports.config = merge(ideConf.config, {
@@ -15,11 +13,11 @@ exports.config = merge(ideConf.config, {
   // directory is where your package.json resides, so `wdio` will be called from there.
   //
   specs: [
-    //'./test/specs/*.js',
+    //"./test/specs/*.js",
   ],
   // Patterns to exclude.
   exclude: [
-    // './test/specs/file-to-exclude.js'
+    // "./test/specs/file-to-exclude.js"
   ],
 
   // run tests on sauce instead locally

@@ -1,5 +1,5 @@
 {
-  "cloudIde" : {
+  "cloudIdeCss" : {
     "landingPage": {
       "logInHeader": "#currentUser > div > div.menuItems > div > a:nth-child(1)",
       "signInHeader": "#currentUser > div > div.menuItems > div > a:nth-child(2)",
@@ -38,11 +38,12 @@
       "spaceNavToggler": "#menuToggler",
       "yourProjects": "#main > div.band.pushFooter > div > div > div.majorColumn > div.sectionTitle.flex > span",
       "newProjectButton": "#main > div.band.pushFooter > div > div > div.majorColumn > div.sectionTitle.flex > div > span > button",
+      "existingProject": "#main > div.band.pushFooter > div > div > div.majorColumn > div:nth-child(2) > div:nth-child(1) > div > div.itemHeader > div.itemTitle > a",
       "yourWorkspace": "#navPanel > div.panelContents > div.navMenu > div.spaceMenu.mobileSubsOnly > div.menu > a.menuItem.space.nullSpace.active",
       "newSpace": "#navPanel > div.panelContents > div.navMenu > div.spaceMenu.mobileSubsOnly > div.menu > div.menuItem.newSpace",
       "learnLink": "#navPanel > div.panelContents > div.navMenu > div:nth-child(2)",
       "infoLabel": "#navPanel > div.panelContents > div.navMenu > div:nth-child(4)",
-      "systemStatus": "#navPanel > div.panelContents > div.navMenu > div.spaceMenu.mobileSubsOnly > div.menu > div.menuItem.newSpace",
+      "systemStatus": "#navPanel > div.panelContents > div.navMenu > div:nth-child(5) > div > a.menuItem.status > span",
       "termsAndConditions": "#navPanel > div.panelContents > div.navMenu > div:nth-child(5) > div > a.menuItem.legalDoc",
       "feedbackLink": "#navPanel > div.panelContents > div.navMenu > div:nth-child(3) > div > a.menuItem.community",
       "cheatSheets": "#navPanel > div.panelContents > div.navMenu > div:nth-child(3) > div > a.menuItem.cheatSheets",
@@ -50,7 +51,9 @@
       "primersLink": "#navPanel > div.panelContents > div.navMenu > div:nth-child(3) > div > a.menuItem.primers",
       "whatsNew": "#navPanel > div.panelContents > div.navMenu > div:nth-child(3) > div > a.menuItem.newFeatures",
       "guideLink": "#navPanel > div.panelContents > div.navMenu > div:nth-child(3) > div > a.menuItem.guide",
-      "rstudioConsole": "#rstudio_console_output"
+      "rstudioConsole": "#rstudio_console_output",
+      "ideContentIFrame": "#contentIFrame",
+      "rstudioConsolePrompt": "#rstudio_shell_widget > div > table > tbody > tr:nth-child(3) > td > table > tbody > tr > td:nth-child(1) > div"
     },
     "accountPopUp": {
       "modalDialog": "#main > div:nth-child(4) > div > div",
@@ -58,6 +61,11 @@
       "accountFromList": "#main > div:nth-child(4) > div > div > form > div.chunk.formSection > div.radioListBox.max5 > div:nth-child(1) > label",
       "modalTitleLabel": "#main > div:nth-child(4) > div > div > div",
       "formSection": "#main > div:nth-child(4) > div > div > form > div.chunk.formSection"
+    }
+  },
+  "cloudIdeXpath": {
+    "projectPage": {
+      "existingProject": "'//*[@id=\"main\"]/div[2]/div/div/div[1]/div[2]/div/div/div[1]/div[1]/a'"
     }
   }
 }

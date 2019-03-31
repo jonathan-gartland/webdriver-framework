@@ -8,52 +8,58 @@ const selectors = require("../../selectors/ide.json");
  */
 class ProjectPage extends Page {
 
-  // right nav elements, space menu, ....
-  // might get broken out into it's own object - try to think nimbly
-  // this probably the space 'page' at the end of the day
-  get spaceNavToggler() { return $(selectors.cloudIde.projectPage.spaceNavToggler); }
+  get spaceNavToggler() { return $(selectors.cloudIdeCss.projectPage.spaceNavToggler); }
   // similar to above
-  get yourProjects() { return $(selectors.cloudIde.projectPage.yourProjects); }
-  get newProjectButton() { return $(selectors.cloudIde.projectPage.newProjectButton); }
+  get yourProjects() { return $(selectors.cloudIdeCss.projectPage.yourProjects); }
+  get newProjectButton() { return $(selectors.cloudIdeCss.projectPage.newProjectButton); }
+  get existingProjectLink() { return $(selectors.cloudIdeCss.projectPage.existingProject); }
 
-  get accountSelectPopUp() { return $(selectors.cloudIde.accountPopUp.modalDialog); }
-  get accountFieldToSelect() { return $(selectors.cloudIde.accountPopUp.accountFromList); }
-  get accountSelectButton() { return $(selectors.cloudIde.accountPopUp.submitButton); }
-  get systemStatus() { return $(selectors.cloudIde.projectPage.systemStatus); }
+  get accountSelectPopUp() { return $(selectors.cloudIdeCss.accountPopUp.modalDialog); }
+  get accountFieldToSelect() { return $(selectors.cloudIdeCss.accountPopUp.accountFromList); }
+  get accountSelectButton() { return $(selectors.cloudIdeCss.accountPopUp.submitButton); }
+  get systemStatus() { return $(selectors.cloudIdeCss.projectPage.systemStatus); }
+  get contentIFrame() { return $(selectors.cloudIdeCss.projectPage.ideContentIFrame); }
+  get rstudioConsolePrompt() { return $(selectors.cloudIdeCss.projectPage.rstudioConsolePrompt); }
 
-  get iFrame() { return $('#rstudio'); }
 
-  get iFrameRStudioElement() { return $('#rstudio_console_output'); }
+  deleteProject() {
 
-  //get ideConsole() { return $(selectors.cloudIde.projectPage.rstudioConsole); }
+    // 2 ways via GUI
 
-  // message while waiting: #contentContainer > div > div
+  }
 
-  // content ~= project page object in this case, opening the project
-  // will be an ide/iframe page object
+  openExistingProject() {
+    browser.pause(5000);  // in case the workspace is still rendering elements
+    this.existingProjectLink.waitForDisplayed(10000)  // in case it takes a little longer
+    if (this.existingProjectLink.isExisting()) {
+      this.existingProjectLink.click();
+    }
+  }
 
   openNewProject() {
     if (this.newProjectButton.isDisplayed()) {
       this.newProjectButton.click();
     }
-    //this.ideConsole.waitForDisplayed(50000);
+  }
+
+  validateProjectOpened() {
+    browser.pause(10000); // need to let the project open, sometimes it's slow
+    browser.switchToFrame(this.contentIFrame);
+    // get the console prompt widget, if it is visible and existing,
+    // the project has opened.
+    assert(this.rstudioConsolePrompt.isExisting());
+
   }
 
   manageAccountSelectPopUp(){
+    // a user can have more than one account. sometimes, the user
+    // must select an account to open the workspace. this manages
+    // that case.
     if (this.accountFieldToSelect.isExisting()){
       this.accountFieldToSelect.click();
       this.accountSelectButton.click();
     }
   }
-    // var iFrame = "//*[@id='rstudio']";
-    // iFrame.waitForExist(30000)
-    // browser.click(iFrame);
-
-
-
-
-
-
 
   validateProjectPageOpened(){
     // wait for the account pop up in case we need to select an account
@@ -74,6 +80,10 @@ class ProjectPage extends Page {
       }, 5000);
 
     }
+  }
+
+  validateSpaceNavIsVisible() {
+    assert(this.systemStatus.isExisting())
   }
 }
 

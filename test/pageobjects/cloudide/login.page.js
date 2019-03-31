@@ -1,8 +1,7 @@
-import Page from '../page';
+import Page from "../page";
 import LandingPage from "./landing.page";
 import ProjectPage from "./project.page";
-import AccountPopUpPage from "./account.select.popup.page.js";
-const selectors = require('../../selectors/ide.json');
+const selectors = require("../../selectors/ide.json");
 
 
 /**
@@ -13,15 +12,15 @@ const selectors = require('../../selectors/ide.json');
 class LoginPage extends Page {
 
   // Elements from our login form page
-  get userInput() { return  $(selectors.cloudIde.loginPage.userInput); }
-  get passWord() { return $(selectors.cloudIde.loginPage.passWord); }
-  get loginButton() { return $(selectors.cloudIde.loginPage.loginButton); }
-  get loginGoogleButton() { return $(selectors.cloudIde.loginPage.loginGoogleButton); }
-  get loginGithubButton() { return $(selectors.cloudIde.loginPage.loginGithubButton); }
-  get forgotPasswordLink() { return $(selectors.cloudIde.loginPage.forgotPasswordLink); }
-  get signUpLink() { return $(selectors.cloudIde.loginPage.signUpLink); }
-  get termsOfServiceLink() { return $(selectors.cloudIde.loginPage.termsOfServiceLink); }
-  get copyrightDiv() { return $(selectors.cloudIde.loginPage.copyrightDiv); }
+  get userInput() { return  $(selectors.cloudIdeCss.loginPage.userInput); }
+  get passWord() { return $(selectors.cloudIdeCss.loginPage.passWord); }
+  get loginButton() { return $(selectors.cloudIdeCss.loginPage.loginButton); }
+  get loginGoogleButton() { return $(selectors.cloudIdeCss.loginPage.loginGoogleButton); }
+  get loginGithubButton() { return $(selectors.cloudIdeCss.loginPage.loginGithubButton); }
+  get forgotPasswordLink() { return $(selectors.cloudIdeCss.loginPage.forgotPasswordLink); }
+  get signUpLink() { return $(selectors.cloudIdeCss.loginPage.signUpLink); }
+  get termsOfServiceLink() { return $(selectors.cloudIdeCss.loginPage.termsOfServiceLink); }
+  get copyrightDiv() { return $(selectors.cloudIdeCss.loginPage.copyrightDiv); }
 
 
   // Login via username password function
@@ -59,16 +58,7 @@ class LoginPage extends Page {
   }
 
   validateUserLoggedIn() {
-    // todo replace with a wait for element type validation
-
-
-    // if(AccountPopUpPage.popUpIsOpen()) {
-    //   AccountPopUpPage.accountFromList.click();
-    //   AccountPopUpPage.submitButton.click();
-    // }
-
     ProjectPage.validateProjectPageOpened();
-
   }
 
 }
