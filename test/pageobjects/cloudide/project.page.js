@@ -21,17 +21,11 @@ class ProjectPage extends Page {
   get accountFieldToSelect() { return $(selectors.cloudIdeCss.accountPopUp.accountFromList); }
   get accountSelectButton() { return $(selectors.cloudIdeCss.accountPopUp.submitButton); }
   get systemStatus() { return $(selectors.cloudIdeCss.projectPage.systemStatus); }
+  get iFrame() { return $("#rstudio"); }
+  get contentIFrame() { return $("#contentIFrame"); }
+  get iFrameRStudioElement() { return $('#rstudio_console_output'); }
+  get rstudioConsolePrompt() { return $('#rstudio_shell_widget > div > table > tbody > tr:nth-child(3) > td > table > tbody > tr > td:nth-child(1) > div'); }
 
-  // get iFrame() { return $('#rstudio'); }
-
-  // get iFrameRStudioElement() { return $('#rstudio_console_output'); }
-
-  //get ideConsole() { return $(selectors.cloudIdeCss.projectPage.rstudioConsole); }
-
-  // message while waiting: #contentContainer > div > div
-
-  // content ~= project page object in this case, opening the project
-  // will be an ide/iframe page object
 
   deleteProject() {
 
@@ -41,51 +35,29 @@ class ProjectPage extends Page {
 
   openExistingProject() {
 
-    //browser.debug();
-    browser.pause(5000);
-    this.existingProjectLink.waitForDisplayed(10000)
-
+    browser.pause(5000);  // in case the workspace is still rendering elements
+    this.existingProjectLink.waitForDisplayed(10000)  // in case it takes a little longer
     if (this.existingProjectLink.isExisting()) {
       this.existingProjectLink.click();
     }
-    browser.pause(5000);
-
-
-    //browser.debug();
-    // if (this.existingProjectLink.isExisting()) {
-    //   browser.debug();
-    //   this.existingProjectLink.click();
-    //
-    //   //$('#rstudio').waitForExist(90000);
-    //   //$('#contentFrame').waitForExist(90000);
-    //   $('#rstudio_console_output').waitForExist(90000);
-    //   if($('#rstudio_console_output').isExisting()) {
-    //     browser.debug();
-    //   }
-      //browser.switchToFrame('#rstudio_console_output')
-      //console.log($('#rstudio_console_output').isExisting());
-
-    //}
-    //browser.debug();
-    //browser.switchToFrame('#rstudio_console_output')
-
   }
 
   openNewProject() {
     if (this.newProjectButton.isDisplayed()) {
       this.newProjectButton.click();
     }
-
-
-    //var iFrame = "//*[@id='contentIFrame']"; //#contentIFrame
-
-    //browser.waitForExist(iFrame);
-    //var my_frame = $(iFrame).value;
-    //browser.frame(my_frame);
-    // console.log('****** >>>  here  <<< ******')
-
-    //this.ideConsole.waitForDisplayed(50000);
   }
+
+  validateProjectOpened() {
+
+    browser.pause(10000); // need to let the project open, sometimes it's slow
+    browser.switchToFrame(this.contentIFrame);
+    // get the console prompt widget, if it is visible and existing,
+    // the project has opened.
+    assert(this.rstudioConsolePrompt.isExisting());
+
+  }
+
 
   manageAccountSelectPopUp(){
     if (this.accountFieldToSelect.isExisting()){
