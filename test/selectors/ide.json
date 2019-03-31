@@ -51,7 +51,9 @@
       "primersLink": "#navPanel > div.panelContents > div.navMenu > div:nth-child(3) > div > a.menuItem.primers",
       "whatsNew": "#navPanel > div.panelContents > div.navMenu > div:nth-child(3) > div > a.menuItem.newFeatures",
       "guideLink": "#navPanel > div.panelContents > div.navMenu > div:nth-child(3) > div > a.menuItem.guide",
-      "rstudioConsole": "#rstudio_console_output"
+      "rstudioConsole": "#rstudio_console_output",
+      "ideContentIFrame": "#contentIFrame",
+      "rstudioConsolePrompt": "#rstudio_shell_widget > div > table > tbody > tr:nth-child(3) > td > table > tbody > tr > td:nth-child(1) > div"
     },
     "accountPopUp": {
       "modalDialog": "#main > div:nth-child(4) > div > div",

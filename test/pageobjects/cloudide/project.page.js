@@ -21,10 +21,8 @@ class ProjectPage extends Page {
   get accountFieldToSelect() { return $(selectors.cloudIdeCss.accountPopUp.accountFromList); }
   get accountSelectButton() { return $(selectors.cloudIdeCss.accountPopUp.submitButton); }
   get systemStatus() { return $(selectors.cloudIdeCss.projectPage.systemStatus); }
-  get iFrame() { return $("#rstudio"); }
-  get contentIFrame() { return $("#contentIFrame"); }
-  get iFrameRStudioElement() { return $('#rstudio_console_output'); }
-  get rstudioConsolePrompt() { return $('#rstudio_shell_widget > div > table > tbody > tr:nth-child(3) > td > table > tbody > tr > td:nth-child(1) > div'); }
+  get contentIFrame() { return $(selectors.cloudIdeCss.projectPage.ideContentIFrame); }
+  get rstudioConsolePrompt() { return $(selectors.cloudIdeCss.projectPage.rstudioConsolePrompt); }
 
 
   deleteProject() {
