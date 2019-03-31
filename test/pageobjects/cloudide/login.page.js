@@ -1,8 +1,7 @@
-import Page from '../page';
+import Page from "../page";
 import LandingPage from "./landing.page";
 import ProjectPage from "./project.page";
-import AccountPopUpPage from "./account.select.popup.page.js";
-const selectors = require('../../selectors/ide.json');
+const selectors = require("../../selectors/ide.json");
 
 
 /**
@@ -59,16 +58,7 @@ class LoginPage extends Page {
   }
 
   validateUserLoggedIn() {
-    // todo replace with a wait for element type validation
-
-
-    // if(AccountPopUpPage.popUpIsOpen()) {
-    //   AccountPopUpPage.accountFromList.click();
-    //   AccountPopUpPage.submitButton.click();
-    // }
-
     ProjectPage.validateProjectPageOpened();
-
   }
 
 }
