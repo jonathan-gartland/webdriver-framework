@@ -8,9 +8,6 @@ const selectors = require("../../selectors/ide.json");
  */
 class ProjectPage extends Page {
 
-  // right nav elements, space menu, ....
-  // might get broken out into it's own object - try to think nimbly
-  // this probably the space 'page' at the end of the day
   get spaceNavToggler() { return $(selectors.cloudIdeCss.projectPage.spaceNavToggler); }
   // similar to above
   get yourProjects() { return $(selectors.cloudIdeCss.projectPage.yourProjects); }
@@ -32,7 +29,6 @@ class ProjectPage extends Page {
   }
 
   openExistingProject() {
-
     browser.pause(5000);  // in case the workspace is still rendering elements
     this.existingProjectLink.waitForDisplayed(10000)  // in case it takes a little longer
     if (this.existingProjectLink.isExisting()) {
@@ -47,7 +43,6 @@ class ProjectPage extends Page {
   }
 
   validateProjectOpened() {
-
     browser.pause(10000); // need to let the project open, sometimes it's slow
     browser.switchToFrame(this.contentIFrame);
     // get the console prompt widget, if it is visible and existing,
@@ -56,16 +51,15 @@ class ProjectPage extends Page {
 
   }
 
-
   manageAccountSelectPopUp(){
+    // a user can have more than one account. sometimes, the user
+    // must select an account to open the workspace. this manages
+    // that case.
     if (this.accountFieldToSelect.isExisting()){
       this.accountFieldToSelect.click();
       this.accountSelectButton.click();
     }
   }
-    // var iFrame = "//*[@id='rstudio']";
-    // iFrame.waitForExist(30000)
-    // browser.click(iFrame);
 
   validateProjectPageOpened(){
     // wait for the account pop up in case we need to select an account
