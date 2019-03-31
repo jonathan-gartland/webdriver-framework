@@ -22,8 +22,11 @@ class ProjectPage extends Page {
   get accountSelectButton() { return $(selectors.cloudIdeCss.accountPopUp.submitButton); }
   get systemStatus() { return $(selectors.cloudIdeCss.projectPage.systemStatus); }
 
-  get iFrame() { return $('#rstudio'); }
+  get iFrame() { return $("#rstudio"); }
+  get contentIFrame() { return $("#contentIFrame"); }
   get iFrameRStudioElement() { return $('#rstudio_console_output'); }
+  get rstudioConsolePrompt() { return $('#rstudio_shell_widget > div > table > tbody > tr:nth-child(3) > td > table > tbody > tr > td:nth-child(1) > div'); }
+
   // get ideConsole() { return $(selectors.cloudIdeCss.projectPage.rstudioConsole); }
   // message while waiting: #contentContainer > div > div
 
@@ -43,12 +46,21 @@ class ProjectPage extends Page {
     if (this.existingProjectLink.isExisting()) {
       this.existingProjectLink.click();
     }
-    browser.pause(5000);
+    //browser.pause(5000);
+    browser.pause(10000);
+    browser.switchToFrame(this.contentIFrame);
+    //$("#rstudio_console_input > textarea").setValue("test text");
+    // get the console widget, if it is visible and existing,
+    // the project has opened.
+    assert(this.rstudioConsolePrompt.isExisting());
+
+    //browser.debug();
   }
 
   openNewProject() {
     if (this.newProjectButton.isDisplayed()) {
       this.newProjectButton.click();
+
     }
 
 
@@ -62,6 +74,11 @@ class ProjectPage extends Page {
 
 
   }
+
+  validateProjectOpened() {
+
+  }
+
 
   manageAccountSelectPopUp(){
     if (this.accountFieldToSelect.isExisting()){
