@@ -8,9 +8,6 @@ const selectors = require("../../selectors/ide.json");
  */
 class ProjectPage extends Page {
 
-  // right nav elements, space menu, ....
-  // might get broken out into it's own object - try to think nimbly
-  // this probably the space 'page' at the end of the day
   get spaceNavToggler() { return $(selectors.cloudIdeCss.projectPage.spaceNavToggler); }
   // similar to above
   get yourProjects() { return $(selectors.cloudIdeCss.projectPage.yourProjects); }
@@ -58,14 +55,14 @@ class ProjectPage extends Page {
 
 
   manageAccountSelectPopUp(){
+    // a user can have more than one account. sometimes, the user
+    // must select an account to open the workspace. this manages
+    // that case.
     if (this.accountFieldToSelect.isExisting()){
       this.accountFieldToSelect.click();
       this.accountSelectButton.click();
     }
   }
-    // var iFrame = "//*[@id='rstudio']";
-    // iFrame.waitForExist(30000)
-    // browser.click(iFrame);
 
   validateProjectPageOpened(){
     // wait for the account pop up in case we need to select an account
@@ -86,6 +83,10 @@ class ProjectPage extends Page {
       }, 5000);
 
     }
+  }
+
+  validateSpaceNavIsVisible() {
+    assert(this.systemStatus.isExisting())
   }
 }
 

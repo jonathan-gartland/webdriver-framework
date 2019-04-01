@@ -27,6 +27,7 @@ describe("Project Page *TBD* ", () => {
 
    it('should open an existing project', () => {
     ProjectPage.openExistingProject();
+    ProjectPage.validateProjectOpened();
    });
 
 

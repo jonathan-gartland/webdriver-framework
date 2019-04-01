@@ -43,7 +43,7 @@
       "newSpace": "#navPanel > div.panelContents > div.navMenu > div.spaceMenu.mobileSubsOnly > div.menu > div.menuItem.newSpace",
       "learnLink": "#navPanel > div.panelContents > div.navMenu > div:nth-child(2)",
       "infoLabel": "#navPanel > div.panelContents > div.navMenu > div:nth-child(4)",
-      "systemStatus": "#navPanel > div.panelContents > div.navMenu > div.spaceMenu.mobileSubsOnly > div.menu > div.menuItem.newSpace",
+      "systemStatus": "#navPanel > div.panelContents > div.navMenu > div:nth-child(5) > div > a.menuItem.status > span",
       "termsAndConditions": "#navPanel > div.panelContents > div.navMenu > div:nth-child(5) > div > a.menuItem.legalDoc",
       "feedbackLink": "#navPanel > div.panelContents > div.navMenu > div:nth-child(3) > div > a.menuItem.community",
       "cheatSheets": "#navPanel > div.panelContents > div.navMenu > div:nth-child(3) > div > a.menuItem.cheatSheets",
