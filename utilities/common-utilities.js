@@ -1,6 +1,6 @@
 /***************************************************************************************/
 /**
-					place holder for framework reusable library
+ *                  place holder for framework reusable library
  **/
 /****************************************************************************************/
 
@@ -72,14 +72,14 @@ module.exports = {
   },
 
   /***************************************************************************************/
-  /*
-   * method isArray(myArray)
-   * @return {Boolean} Whether it a array or not
-   * example - 	var foo1 = [{foundation: "GBI", model: "automation", week: 45, month: 7}];
-   * 				var foo2 = {foundation: "GBI", model: "automation", week: 45, month: 7};
-   * isArray(foo1)	- returns - true
-   * isArray(foo2)	- returns - false
-   **/
+    /*
+    * method isArray(myArray)
+    * @return {Boolean} Whether it a array or not
+    * example - 	var foo1 = [{foundation: "GBI", model: "automation", week: 45, month: 7}];
+    * 				var foo2 = {foundation: "GBI", model: "automation", week: 45, month: 7};
+    * isArray(foo1)	- returns - true
+    * isArray(foo2)	- returns - false
+    **/
   /****************************************************************************************/
   isArray : function (myArray) {
       return myArray.constructor.toString().indexOf("Array") > -1;

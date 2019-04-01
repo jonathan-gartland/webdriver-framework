@@ -15,4 +15,32 @@ Enter the following commands:
 
 This runs a simple test to validate we can open the landing page running headless.       
 It will report on the command line the status of the tests.  
-That's it for now.  
+That's it for now.
+
+Project structure:
+I built this out based on the boilerplate mocha-chai example from webdriverio.
+https://github.com/amiya-pattnaik/webdriverIO-with-mochaBDD
+The documentation for that project will tell you much more than i can here.
+Other than the Jenkinsfile that i added to test the jenkins integration with a
+browser hosting service (Browserstack), and package-lock.json everything else was part
+of the initial download.
+
+test directory:
+contains directories: config, pageobjects, reports, selectors, specs, test-data, users
+
+config:
+manage the test parameters here, some settings can be overridden on the command line.
+
+pageobjects:
+Base page objects for landing and login pages in this directory, plus directories to manage the cloud ide and shinyappsio page objects.
+
+selectors:
+Contains json files with detail for selectors for both cloud ide and shinyappsio.
+
+specs:
+The files where we describe the tests to be run.
+
+reports:
+test results
+
+

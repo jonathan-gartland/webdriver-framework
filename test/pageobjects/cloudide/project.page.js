@@ -9,7 +9,8 @@ const selectors = require("../../selectors/ide.json");
 class ProjectPage extends Page {
 
   get spaceNavToggler() { return $(selectors.cloudIdeCss.projectPage.spaceNavToggler); }
-  // similar to above
+  get spaceNavSpaces() { return $(); }
+
   get yourProjects() { return $(selectors.cloudIdeCss.projectPage.yourProjects); }
   get newProjectButton() { return $(selectors.cloudIdeCss.projectPage.newProjectButton); }
   get existingProjectLink() { return $(selectors.cloudIdeCss.projectPage.existingProject); }
