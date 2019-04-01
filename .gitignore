@@ -6,8 +6,8 @@ node_modules/*
 errorShots/*
 .DS_Store
 npm-debug.log
-test/reports/allure-results/*
-test/reports/junit-results/*
+test/reports/allure-results/*.log
+test/reports/junit-results/*.xml
 .vscode/*
 *.iml
 
