@@ -8,8 +8,14 @@ const selectors = require("../../selectors/ide.json");
  */
 class ProjectPage extends Page {
 
+  get spaceHeaderTitle() { return $(selectors.cloudIdeCss.projectPage.spaceHeaderTitle); }
   get spaceNavToggler() { return $(selectors.cloudIdeCss.projectPage.spaceNavToggler); }
-  get newSpaceLink
+  get existingSpaceToOpen() { return $(selectors.cloudIdeCss.projectPage.firstSpaceInListNotActive); }
+  get newSpaceLink() { return $(selectors.cloudIdeCss.projectPage.newSpace); }
+  get newSpaceModal() { return $(selectors.cloudIdeCss.projectPage.newSpaceModalDialog); }
+  get newSpaceModalNameField() { return $(selectors.cloudIdeCss.projectPage.newSpaceName); }
+  get newSpaceModalDetailField() { return $(selectors.cloudIdeCss.projectPage.newSpaceInfo); }
+  get createSpaceButton() { return $(selectors.cloudIdeCss.projectPage.createNewSpaceButton); }
   get yourProjects() { return $(selectors.cloudIdeCss.projectPage.yourProjects); }
   get newProjectButton() { return $(selectors.cloudIdeCss.projectPage.newProjectButton); }
   get existingProjectLink() { return $(selectors.cloudIdeCss.projectPage.existingProject); }
@@ -87,6 +93,27 @@ class ProjectPage extends Page {
 
   validateSpaceNavIsVisible() {
     assert(this.systemStatus.isExisting())
+  }
+
+  openExistingSpace() {
+    // opens first space in list when user is in 'My Workspace'
+    const currentSpace = this.spaceHeaderTitle.getText();
+    if (this.existingSpaceToOpen.isExisting()){
+      this.existingSpaceToOpen.click();
+    }
+    browser.pause(3000);
+    const newSpace = this.spaceHeaderTitle.getText();
+
+    assert(currentSpace !== newSpace);
+
+  }
+
+  createNewSpace(newSpaceName) {
+
+  }
+
+  deleteSpace(deleteSpaceName) {
+
   }
 }
 

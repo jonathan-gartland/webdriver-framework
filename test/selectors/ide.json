@@ -35,6 +35,7 @@
       "copyrightDiv": "#copyright"
     },
     "projectPage": {
+      "spaceHeaderTitle": "#headerTitle",
       "spaceNavToggler": "#menuToggler",
       "yourProjects": "#main > div.band.pushFooter > div > div > div.majorColumn > div.sectionTitle.flex > span",
       "newProjectButton": "#main > div.band.pushFooter > div > div > div.majorColumn > div.sectionTitle.flex > div > span > button",
@@ -45,7 +46,7 @@
       "newSpaceName": "#name",
       "newSpaceInfo": "#description",
       "createNewSpaceButton": "#main > div:nth-child(4) > div > div > form > div > button",
-      "firstSpaceInListNotActive": "#navPanel > div.panelContents > div.navMenu > div.spaceMenu.mobileSubsOnly > div.menu > a:nth-child(3)",
+      "firstSpaceInListNotActive": "#navPanel > div.panelContents > div.navMenu > div.spaceMenu.mobileSubsOnly > div.menu > a:nth-child(4)",
       "deleteSpaceActionWidget": "#rStudioHeader > div.band > div > div.actionBar.menu.aux > div > div.action.moreActions",
       "deleteSpaceButton": "#rStudioHeader > div.band > div > div.actionBar.menu.aux > div > div.popupMenu.open > button.action.delete",
       "learnLink": "#navPanel > div.panelContents > div.navMenu > div:nth-child(2)",

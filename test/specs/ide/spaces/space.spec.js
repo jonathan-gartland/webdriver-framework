@@ -28,10 +28,11 @@ describe("Space NAV *TBD* ", () => {
   });
 
 
-  // it('should open an existing project', () => {
-  //   ProjectPage.openExistingProject();
-  //   ProjectPage.validateProjectOpened();
-  // });
+   it('should open an inactive space in the list', () => {
+     ProjectPage.validateSpaceNavIsVisible();
+     browser.pause(5000);
+     ProjectPage.openExistingSpace();
+  });
 
 
   // it('should be a new project for the test user', () => {
