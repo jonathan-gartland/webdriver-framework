@@ -73,7 +73,6 @@ class ProjectPage extends Page {
       browser.pause(18000);
     }
   }
-
   // open from github ... later
 
   validateProjectOpened() {
@@ -85,7 +84,6 @@ class ProjectPage extends Page {
     assert(this.rstudioConsolePrompt.isExisting());
 
   }
-
 
   manageAccountSelectPopUp(){
     // a user can have more than one account. sometimes, the user
@@ -136,7 +134,6 @@ class ProjectPage extends Page {
 
   createNewSpace(newSpaceName) {
     // todo : need to make sure space name is unique
-
 
     if (this.newSpaceLink.isExisting()) {
       this.newSpaceLink.click();
