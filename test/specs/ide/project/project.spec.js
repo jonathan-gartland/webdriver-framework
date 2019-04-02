@@ -25,19 +25,20 @@ describe("Project Page *TBD* ", () => {
     ProjectPage.validateProjectPageOpened();
   });
 
-   it('should open an existing project', () => {
-    ProjectPage.openExistingProject();
+  // it('should open an existing project', () => {
+  //   ProjectPage.openExistingProject();
+  //   ProjectPage.validateProjectOpened();
+  // });
+
+  it('should be a new project for the test user', () => {
+    ProjectPage.validateProjectPageOpened();
+    ProjectPage.openNewProject();
     ProjectPage.validateProjectOpened();
-   });
+  });
 
-
-  // it('should be a new project for the test user', () => {
-  //   ProjectPage.openNewProject();
-  // });
-
-  // it('should be the iframe of the new project', () => {
-
-  // });
+  it('should delete a project', () => {
+    ProjectPage.deleteClosedProject();
+  });
 
 });
 

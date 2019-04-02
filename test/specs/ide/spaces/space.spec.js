@@ -28,20 +28,24 @@ describe("Space NAV *TBD* ", () => {
   });
 
 
-   it('should open an inactive space in the list', () => {
-     ProjectPage.validateSpaceNavIsVisible();
-     browser.pause(5000);
-     ProjectPage.openExistingSpace();
+  //  it('should open an inactive space in the list', () => {
+  //    ProjectPage.validateSpaceNavIsVisible();
+  //    browser.pause(2000); // needed?
+  //    ProjectPage.openExistingSpace();
+  // });
+
+  it('should create a new space', () => {
+    ProjectPage.validateSpaceNavIsVisible();
+    browser.pause(2000);  // needed?
+    ProjectPage.createNewSpace('AAnewSpace'); // todo: pass as an argument
+
   });
 
-
-  // it('should be a new project for the test user', () => {
-  //   ProjectPage.openNewProject();
-  // });
-
-  // it('should be the iframe of the new project', () => {
-
-  // });
+  it('should delete a space', () => {
+    ProjectPage.validateSpaceNavIsVisible();
+    //ProjectPage.createNewSpace('AAnewSpace'); // todo: pass as an argument
+    ProjectPage.deleteSpace('ZZnewSpace');
+  });
 
 });
 
