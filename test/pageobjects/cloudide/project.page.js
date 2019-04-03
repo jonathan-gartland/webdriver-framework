@@ -70,8 +70,9 @@ class ProjectPage extends Page {
   openNewProject() {
     if (this.newProjectButton.isDisplayed()) {
       this.newProjectButton.click();
-      browser.pause(18000);
+      browser.pause(20000);
     }
+    this.validateProjectOpened();
   }
   // open from github ... later
 
