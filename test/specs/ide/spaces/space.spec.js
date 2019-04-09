@@ -5,22 +5,47 @@ import ProjectPage from '../../../pageobjects/cloudide/project.page';
 
 
 
-describe('Project page', () => {
+// noinspection Duplicates
+describe("Space NAV *TBD* ", () => {
 
-  it('should be the project page for the test user', () => {
+  before( () => {
+
     LoginPage.logInFromLandingPage();
     LoginPage.waitForLoginFormToLoad();
     LoginPage.verifyPageElementsRenderForLogin();
     LoginPage.loginWithUserNamePasswordCombo(
-      process.env.LOGIN_NAME,
-      process.env.PASSWORD
+        process.env.LOGIN_NAME,
+        process.env.PASSWORD
     );
 
     ProjectPage.validateProjectPageOpened();
 
+  });
 
-    // todo : args from command
+
+  it('should be the Workspace Nav on Project Page for the test user', () => {
+    ProjectPage.validateSpaceNavIsVisible();
+  });
+
+
+  //  it('should open an inactive space in the list', () => {
+  //    ProjectPage.validateSpaceNavIsVisible();
+  //    browser.pause(2000); // needed?
+  //    ProjectPage.openExistingSpace();
+  // });
+
+  it('should create a new space', () => {
+    ProjectPage.validateSpaceNavIsVisible();
+    browser.pause(2000);  // needed?
+    ProjectPage.createNewSpace('AAnewSpace'); // todo: pass as an argument
 
   });
 
+  it('should delete a space', () => {
+    ProjectPage.validateSpaceNavIsVisible();
+    //ProjectPage.createNewSpace('AAnewSpace'); // todo: pass as an argument
+    ProjectPage.deleteSpace('ZZnewSpace');
+  });
+
 });
+

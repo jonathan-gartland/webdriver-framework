@@ -1,6 +1,6 @@
-import Page from '../page';
-import assert from 'assert';
-const selectors = require('../../selectors/ide.json');
+import Page from "../page";
+import assert from "assert";
+const selectors = require("../../selectors/ide.json");
 /**
  Stub code, again mostly copied from https://webdriver.io/docs/pageobjects.html
  using as base pattern for rstudio.cloud interactions
@@ -8,43 +8,197 @@ const selectors = require('../../selectors/ide.json');
  */
 class ProjectPage extends Page {
 
-  // right nav elements, space menu, ....
-  // might get broken out into it's own object - try to think nimbly
-  // this probably the space 'page' at the end of the day
-  get spaceNavToggler() { return $(selectors.cloudIde.projectPage.spaceNavToggler); }
-  // similar to above
-  get yourProjects() { return $(selectors.cloudIde.projectPage.yourProjects); }
+  get spaceHeaderTitle() { return $(selectors.cloudIdeCss.projectPage.spaceHeaderTitle); }
+  get spaceNavToggler() { return $(selectors.cloudIdeCss.projectPage.spaceNavToggler); }
+  get existingSpaceToOpen() { return $(selectors.cloudIdeCss.projectPage.firstSpaceInListNotActive); }
+  get newSpaceLink() { return $(selectors.cloudIdeCss.projectPage.newSpace); }
+  get newSpaceModal() { return $(selectors.cloudIdeCss.projectPage.newSpaceModalDialog); }
+  get newSpaceModalNameField() { return $(selectors.cloudIdeCss.projectPage.newSpaceName); }
+  get newSpaceModalDetailField() { return $(selectors.cloudIdeCss.projectPage.newSpaceInfo); }
+  get createSpaceButton() { return $(selectors.cloudIdeCss.projectPage.createNewSpaceButton); }
+  get deleteSpaceWidget() { return $(selectors.cloudIdeCss.projectPage.deleteSpaceActionWidget); }
+  get deleteSpaceButton() { return $(selectors.cloudIdeCss.projectPage.deleteSpaceButton); }
+  get deleteSpaceModal() {return $(selectors.cloudIdeCss.projectPage.deleteSpaceModal); }
+  get deleteSpaceInput() {return $(selectors.cloudIdeCss.projectPage.deleteSpaceInput); }
+  get deleteSpaceModalButton() {return $(selectors.cloudIdeCss.projectPage.deleteSpaceModalButton); }
+  get yourProjects() { return $(selectors.cloudIdeCss.projectPage.yourProjects); }
+  get newProjectButton() { return $(selectors.cloudIdeCss.projectPage.newProjectButton); }
+  get existingProjectLink() { return $(selectors.cloudIdeCss.projectPage.existingProject); }
+  get deleteProjectButton() { return $(selectors.cloudIdeCss.projectPage.deleteProjectButton); }
+  get deleteProjectOKButton() { return $(selectors.cloudIdeCss.projectPage.deleteProjectOKButton); }
+  get accountSelectPopUp() { return $(selectors.cloudIdeCss.accountPopUp.modalDialog); }
+  get accountFieldToSelect() { return $(selectors.cloudIdeCss.accountPopUp.accountFromList); }
+  get accountSelectButton() { return $(selectors.cloudIdeCss.accountPopUp.submitButton); }
+  get systemStatus() { return $(selectors.cloudIdeCss.projectPage.systemStatus); }
+  get contentIFrame() { return $(selectors.cloudIdeCss.projectPage.ideContentIFrame); }
+  get rstudioConsolePrompt() { return $(selectors.cloudIdeCss.projectPage.rstudioConsolePrompt); }
 
-  get newProjectButton() { return $(selectors.cloudIde.projectPage.newProjectButton); }
 
-  //get ideConsole() { return $(selectors.cloudIde.projectPage.rstudioConsole); }
+  deleteClosedProject() {
+    // 2 ways via GUI
+    // this one is only doing it with delete button/link in my projects view
+    const projectList = $$(
+        '#main > div.band.pushFooter > div > div > div.majorColumn > div:nth-child(2) > div:nth-child(2) > div > div.itemHeader > div.itemTitle > a'
+    ).map(function(element){ return element.getAttribute('innerText') });
 
-  // message while waiting: #contentContainer > div > div
+    if (this.existingProjectLink.isExisting()) {
+      if (this.deleteProjectButton.isExisting()) {
+        this.deleteProjectButton.click();
+        browser.pause(3000);
+        if(this.deleteProjectOKButton.isExisting()) {
+          this.deleteProjectOKButton.click();
+          // how to validate? check for a list of project names
+          // beforre then again here - might work
+        }
+      }
+    }
+  }
 
-  // content ~= project page object in this case, opening the project
-  // will be an ide/iframe page object
+  deleteOpenProject() {
+
+  }
+
+  openExistingProject() {
+
+    browser.pause(5000);  // in case the workspace is still rendering elements
+    this.existingProjectLink.waitForDisplayed(10000)  // in case it takes a little longer
+    if (this.existingProjectLink.isExisting()) {
+      this.existingProjectLink.click();
+    }
+  }
 
   openNewProject() {
     if (this.newProjectButton.isDisplayed()) {
       this.newProjectButton.click();
+      browser.pause(20000);
     }
+    this.validateProjectOpened();
+  }
+  // open from github ... later
 
-    //this.ideConsole.waitForDisplayed(50000);
+  validateProjectOpened() {
+
+    browser.pause(15000); // need to let the project open, sometimes it's slow
+    browser.switchToFrame(this.contentIFrame);
+    // get the console prompt widget, if it is visible and existing,
+    // the project has opened.
+    assert(this.rstudioConsolePrompt.isExisting());
+
   }
 
+  manageAccountSelectPopUp(){
+    // a user can have more than one account. sometimes, the user
+    // must select an account to open the workspace. this manages
+    // that case.
+    if (this.accountFieldToSelect.isExisting()){
+      this.accountFieldToSelect.click();
+      this.accountSelectButton.click();
+    }
+  }
 
+  validateProjectPageOpened(){
+    // wait for the account pop up in case we need to select an account
+    //this.accountSelectPopUp.waitForDisplayed(5000);
+    browser.pause(5000)
+    // and if it does show up,
+    // select the first account listed - this could be expanded to
+    // look for a specific account later
+    if (this.accountSelectPopUp.isExisting()) {
+      if (this.accountFieldToSelect.isExisting()) {
+        this.manageAccountSelectPopUp();
+      }
+    }
+    else {
+      // Make sure we got logged in, if this passes we're good.
+      browser.waitUntil( () => {
+        return browser.getUrl().indexOf('/projects') > -1;
+      }, 5000);
 
+    }
+  }
 
-  get systemStatus() { return $(selectors.cloudIde.projectPage.systemStatus); }
+  validateSpaceNavIsVisible() {
+    assert(this.systemStatus.isExisting())
+  }
 
+<<<<<<< HEAD
   validateProjectPageOpened(){
     // Make sure we got logged in, if this passes we're good.
     browser.waitUntil(function() {
       return browser.getUrl().indexOf('/projects') > -1;
     }, 30000);
+=======
+  openExistingSpace() {
+    // opens first space in list when user is in 'My Workspace'
+    const currentSpace = this.spaceHeaderTitle.getText();
+    if (this.existingSpaceToOpen.isExisting()){
+      this.existingSpaceToOpen.click();
+    }
+    browser.pause(3000);
+    const newSpace = this.spaceHeaderTitle.getText();
 
+    assert(currentSpace !== newSpace);
+  }
+>>>>>>> 61f1d5372bd3bd9c243a039fbf662611442820aa
+
+  createNewSpace(newSpaceName) {
+    // todo : need to make sure space name is unique
+
+    if (this.newSpaceLink.isExisting()) {
+      this.newSpaceLink.click();
+      this.newSpaceModal.waitForDisplayed(5000);
+      if (this.newSpaceModalNameField.isExisting()) {
+        this.newSpaceModalNameField.setValue(newSpaceName);
+        browser.pause(1000);
+        this.createSpaceButton.click();
+      }
+      browser.pause(2000);
+      assert(this.spaceHeaderTitle.getText() === newSpaceName)
+
+      // hack to keep space from piling up with dupes. I will delete
+      // for now, but there should be logic to open an existing recent space
+      // to be deleted
+      if(this.deleteSpaceWidget.isExisting()) {
+        this.deleteSpaceWidget.click();
+        browser.pause(1000);
+        this.deleteSpaceButton.click();
+        this.deleteSpaceModal.waitForDisplayed(3000);
+        if (this.deleteSpaceInput.isExisting()) {
+          var deleteString = 'Delete ' + this.spaceHeaderTitle.getText();
+          this.deleteSpaceInput.setValue(deleteString);
+          browser.pause(1000);
+          this.deleteSpaceModalButton.click();
+          browser.pause(5000);
+          this.spaceHeaderTitle.waitForDisplayed(5000);
+        }
+      }
+      // this.deleteSpace(newSpaceName);
+      // browser.debug();
+    }
   }
 
+  deleteSpace(deleteSpaceName) {
+    // hack for this right now to avoid a lot of logic to look for the
+    // existing project - just create a space to delete here
+    this.createNewSpace(deleteSpaceName);
+    browser.pause(3000);
+    if(this.deleteSpaceWidget.isExisting()) {
+      this.deleteSpaceWidget.click();
+      browser.pause(1000);
+      this.deleteSpaceButton.click();
+      this.deleteSpaceModal.waitForDisplayed(3000);
+      if(this.deleteSpaceInput.isExisting()) {
+        var deleteString = 'Delete ' + this.spaceHeaderTitle.getText();
+        this.deleteSpaceInput.setValue(deleteString);
+        browser.pause(1000);
+        this.deleteSpaceModalButton.click();
+        browser.pause(5000);
+        this.spaceHeaderTitle.waitForDisplayed(5000);
+      }
+    }
+    // validate - back in My Workspace
+    assert(this.spaceHeaderTitle.getText() === "Your Workspace");
+  }
 }
 
 export default new ProjectPage();

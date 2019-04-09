@@ -1,10 +1,9 @@
-// import baseConf
-// import { merge } from  'deepmerge';
-var baseConf = require('../base.conf.js');
-var merge = require('deepmerge');
+
+const baseConf = require("../base.conf.js");
+const merge = require("deepmerge");
 
 exports.config = merge(baseConf.config, {
 
-  baseUrl: 'https://www.staging.shinyapps.io',
+  baseUrl: "https://www.shinyapps.io",
 
 }, { clone: false });

@@ -6,6 +6,8 @@ node('docker') {
         }
 
         docker.image('node:8.15.0').inside {
+        // need java too, might be a default in image, but we should probably
+        // just craft a container to use
 
             withEnv(['HOME=.']) {
 
@@ -16,19 +18,12 @@ node('docker') {
 
             stage('Run Tests') {
                 try {
-                    //browserstack key for user: jonathangartland2 on our account
-                    //will likely change to use a qaautotest user,
-                    //but probably something for hosted specifically.
-                    //It may be that we (Hosted) want our own account
-                    //(and other teams may have a similar need)
-                    //so that our front end devs can test easily on
-                    //multiple browser/os combos, but that is not critical to get these
-                    //tests up and running.
 
-                    //browserstack('6026f57b-72ff-4eb6-850f-3a76c509356f') {
+
+                    //browserstack('*** <KEY VALUE> ***') {
                     // some block
 
-                    sh 'npm test'
+                    sh 'npm test'   // will run 'test' as defined in Gruntfile.js
                     //}
                 } finally {
                     junit '**test/reports/test-results-*.xml'
@@ -45,10 +40,10 @@ node('docker') {
                           sourceEncoding     : 'ASCII',
                           zoomCoverageChart  : false])
                     //todo : change to appropriate channel when this goes live
-                    // most likely qaautotest, but maybe we use a #hostedtesting
+                    // most likely <user>, but maybe we use a #<slack channel>
                     // the world is our oyster
-                    sendNotifications slack_channel: 'jgtestalert'
-                    slackSend channel: '@jonathan.gartland', color: 'good', message: 'Message from Jenkins Pipeline'
+                    sendNotifications slack_channel: ''
+                    slackSend channel: '@', color: 'good', message: 'Message from Jenkins Pipeline'
                 }
             }
         }
