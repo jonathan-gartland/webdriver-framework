@@ -61,7 +61,7 @@ class ProjectPage extends Page {
   openExistingProject() {
 
     browser.pause(5000);  // in case the workspace is still rendering elements
-    this.existingProjectLink.waitForDisplayed(10000)  // in case it takes a little longer
+    this.existingProjectLink.waitForDisplayed(10000); // in case it takes a little longer
     if (this.existingProjectLink.isExisting()) {
       this.existingProjectLink.click();
     }
@@ -118,16 +118,15 @@ class ProjectPage extends Page {
   }
 
   validateSpaceNavIsVisible() {
-    assert(this.systemStatus.isExisting())
+    assert(this.systemStatus.isExisting());
   }
 
-<<<<<<< HEAD
   validateProjectPageOpened(){
     // Make sure we got logged in, if this passes we're good.
     browser.waitUntil(function() {
       return browser.getUrl().indexOf('/projects') > -1;
     }, 30000);
-=======
+
   openExistingSpace() {
     // opens first space in list when user is in 'My Workspace'
     const currentSpace = this.spaceHeaderTitle.getText();
@@ -136,10 +135,9 @@ class ProjectPage extends Page {
     }
     browser.pause(3000);
     const newSpace = this.spaceHeaderTitle.getText();
-
     assert(currentSpace !== newSpace);
   }
->>>>>>> 61f1d5372bd3bd9c243a039fbf662611442820aa
+
 
   createNewSpace(newSpaceName) {
     // todo : need to make sure space name is unique
@@ -188,8 +186,8 @@ class ProjectPage extends Page {
       this.deleteSpaceButton.click();
       this.deleteSpaceModal.waitForDisplayed(3000);
       if(this.deleteSpaceInput.isExisting()) {
-        var deleteString = 'Delete ' + this.spaceHeaderTitle.getText();
-        this.deleteSpaceInput.setValue(deleteString);
+        var deleteSpaceString = 'Delete ' + this.spaceHeaderTitle.getText();
+        this.deleteSpaceInput.setValue(deleteSpaceString);
         browser.pause(1000);
         this.deleteSpaceModalButton.click();
         browser.pause(5000);
