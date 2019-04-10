@@ -32,6 +32,17 @@ class ProjectPage extends Page {
   get systemStatus() { return $(selectors.cloudIdeCss.projectPage.systemStatus); }
   get contentIFrame() { return $(selectors.cloudIdeCss.projectPage.ideContentIFrame); }
   get rstudioConsolePrompt() { return $(selectors.cloudIdeCss.projectPage.rstudioConsolePrompt); }
+  // Learn link page elements
+  get guideLink() { return $(selectors.cloudIdeCss.projectPage.guideLink); }
+  //get guidePageActiveLink() { return $(selectors.cloudIdeCss.projectPage.guidePageActiveLink); }
+  get whatsNewLink() { return $(selectors.cloudIdeCss.projectPage.whatsNew); }
+  get whatsNewUnreadLink() { return $(selectors.cloudIdeCss.projectPage.whatsNewUnread); }
+  //get whatsNewActiveLink() { return $(selectors.cloudIdeCss.projectPage.whatsNewActiveLink); }
+  get primersLink() { return $(selectors.cloudIdeCss.projectPage.primersLink); }
+  get datacampCourseLink() { return $(selectors.cloudIdeCss.projectPage.datacampLink); }
+  get cheatSheetLink() { return $(selectors.cloudIdeCss.projectPage.cheatSheets); }
+  get feedbackLink() { return $(selectors.cloudIdeCss.projectPage.feedbackLink); }
+  get termsLink() { return $(selectors.cloudIdeCss.projectPage.termsAndConditions); }
 
 
   deleteClosedProject() {
@@ -48,7 +59,7 @@ class ProjectPage extends Page {
         if(this.deleteProjectOKButton.isExisting()) {
           this.deleteProjectOKButton.click();
           // how to validate? check for a list of project names
-          // beforre then again here - might work
+          // before then again here - might work
         }
       }
     }
@@ -121,12 +132,6 @@ class ProjectPage extends Page {
     assert(this.systemStatus.isExisting());
   }
 
-  validateProjectPageOpened(){
-    // Make sure we got logged in, if this passes we're good.
-    browser.waitUntil(function() {
-      return browser.getUrl().indexOf('/projects') > -1;
-    }, 30000);
-
   openExistingSpace() {
     // opens first space in list when user is in 'My Workspace'
     const currentSpace = this.spaceHeaderTitle.getText();
@@ -196,6 +201,14 @@ class ProjectPage extends Page {
     }
     // validate - back in My Workspace
     assert(this.spaceHeaderTitle.getText() === "Your Workspace");
+  }
+
+  validateLinkWorks(inLink, inUrlSnippet) {
+    inLink.waitForExist(10000);
+    inLink.click();
+    browser.waitUntil( () => {
+      return browser.getUrl().indexOf(inUrlSnippet) > -1;
+    }, 10000);
   }
 }
 

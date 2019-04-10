@@ -1,4 +1,4 @@
-import Page from "../page";
+  import Page from "../page";
 import LandingPage from "./landing.page";
 import ProjectPage from "./project.page";
 const selectors = require("../../selectors/ide.json");
@@ -46,7 +46,6 @@ class LoginPage extends Page {
   verifyPageElementsRenderForLogin() {
     if(!this.copyrightDiv.isDisplayed()){
       this.copyrightDiv.waitForDisplayed(10000);
-
     }
   }
 
@@ -54,7 +53,14 @@ class LoginPage extends Page {
     this.userInput.setValue(userName);
     this.passWord.setValue(passWord);
     this.loginButton.click();
+  }
 
+  loginWithGoogle(userName, Password) {
+
+  }
+
+  loginWithGithub(userName, Password) {
+    
   }
 
   validateUserLoggedIn() {
