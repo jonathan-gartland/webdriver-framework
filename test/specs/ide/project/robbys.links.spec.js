@@ -4,7 +4,7 @@ import LoginPage from '../../../pageobjects/cloudide/login.page';
 import ProjectPage from '../../../pageobjects/cloudide/project.page';
 
 // noinspection Duplicates
-describe("Left Nav Links *TBD* ", () => {
+describe("Left Nav Links Mostly ", () => {
 
   before( () => {
     LoginPage.logInFromLandingPage();
