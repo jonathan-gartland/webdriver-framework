@@ -81,7 +81,7 @@ class ProjectPage extends Page {
   openNewProject() {
     if (this.newProjectButton.isDisplayed()) {
       this.newProjectButton.click();
-      browser.pause(20000);
+      browser.pause(80000);
     }
     this.validateProjectOpened();
   }
