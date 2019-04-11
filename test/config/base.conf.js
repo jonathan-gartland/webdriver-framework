@@ -56,7 +56,7 @@ exports.config = {
       'goog:chromeOptions': {
       // to run chrome headless the following flags are required
       // (see https://developers.google.com/web/updates/2017/04/headless-chrome)
-      // args: ['--headless', '--disable-gpu'],
+      //args: ['--headless', '--disable-gpu'],
         //args: ['incognito'],
       }
     },
@@ -69,7 +69,7 @@ exports.config = {
     //   browserName: 'firefox',
     //   "moz:firefoxOptions": {
     //     // flag to activate Firefox headless mode (see https://github.com/mozilla/geckodriver/blob/master/README.md#firefox-capabilities for more details about moz:firefoxOptions)
-    //     args: ['-headless']
+    //     //args: ['-headless']
     //   }
     // },
 
