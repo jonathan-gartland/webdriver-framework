@@ -24,7 +24,7 @@ describe("Left Nav Links Mostly ", () => {
 
 
   it('should be on the Guide page after clicking Guide link under Learn', () => {
-    ProjectPage.validateLinkWorks(ProjectPage.guideLinkraw, '/learn/guide');
+    ProjectPage.validateLinkWorks(ProjectPage.guideLink, '/learn/guide');
   });
 
   it('should be on the Whats New page after clicking Whats new link under Learn', () => {

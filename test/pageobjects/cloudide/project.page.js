@@ -48,9 +48,7 @@ class ProjectPage extends Page {
   deleteClosedProject() {
     // 2 ways via GUI
     // this one is only doing it with delete button/link in my projects view
-    const projectList = $$(
-        '#main > div.band.pushFooter > div > div > div.majorColumn > div:nth-child(2) > div:nth-child(2) > div > div.itemHeader > div.itemTitle > a'
-    ).map(function(element){ return element.getAttribute('innerText') });
+    const projectList = $$(selectors.cloudIdeCss.projectPage.projectList).map(function(element){ return element.getAttribute('innerText') });
 
     if (this.existingProjectLink.isExisting()) {
       if (this.deleteProjectButton.isExisting()) {

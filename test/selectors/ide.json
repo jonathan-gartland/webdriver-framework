@@ -37,6 +37,7 @@
     "projectPage": {
       "spaceHeaderTitle": "#headerTitle",
       "spaceNavToggler": "#menuToggler",
+      "projectList": "'#main > div.band.pushFooter > div > div > div.majorColumn > div:nth-child(2) > div:nth-child(2) > div > div.itemHeader > div.itemTitle > a",
       "yourProjects": "#main > div.band.pushFooter > div > div > div.majorColumn > div.sectionTitle.flex > span",
       "newProjectButton": "#main > div.band.pushFooter > div > div > div.majorColumn > div.sectionTitle.flex > div > span > button",
       "existingProject": "#main > div.band.pushFooter > div > div > div.majorColumn > div:nth-child(2) > div:nth-child(1) > div > div.itemHeader > div.itemTitle > a",
