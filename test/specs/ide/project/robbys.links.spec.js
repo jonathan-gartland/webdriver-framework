@@ -39,11 +39,7 @@ describe("Left Nav Links Mostly ", () => {
   it('should be on the Primers page after clicking Primers link under Learn', () => {
     ProjectPage.validateLinkWorks(ProjectPage.primersLink, '/learn/primers');
   });
-
-  it('should be on the DataCamp page after clicking DataCamp link under Learn', () => {
-    ProjectPage.validateLinkWorks(ProjectPage.datacampCourseLink, '/learn/data-camp-courses');
-  });
-
+  
   it('should be on the Cheat Sheets page after clicking Cheat Sheets link under Learn', () => {
     ProjectPage.validateLinkWorks(ProjectPage.cheatSheetLink, '/learn/cheat-sheets');
   });
