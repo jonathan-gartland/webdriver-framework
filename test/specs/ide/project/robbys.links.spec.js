@@ -19,7 +19,7 @@ describe("Left Nav Links Mostly ", () => {
 
   afterEach( () => {
     browser.url('/projects');
-    browser.pause(3000);
+    browser.pause(5000);
   });
 
 
@@ -39,7 +39,7 @@ describe("Left Nav Links Mostly ", () => {
   it('should be on the Primers page after clicking Primers link under Learn', () => {
     ProjectPage.validateLinkWorks(ProjectPage.primersLink, '/learn/primers');
   });
-  
+
   it('should be on the Cheat Sheets page after clicking Cheat Sheets link under Learn', () => {
     ProjectPage.validateLinkWorks(ProjectPage.cheatSheetLink, '/learn/cheat-sheets');
   });

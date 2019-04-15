@@ -18,7 +18,7 @@ exports.config = merge(ideConf.config, {
     "./test/specs/ide/login/login.spec.js",
     "./test/specs/ide/project/project.spec.js",
     "./test/specs/ide/spaces/space.spec.js",
-    "./test/specs/ide/project/robbys.links.spec.js",
+    "./test/specs/ide/project/robbys.links.spec.js"
   ],
   // Patterns to exclude.
   exclude: [
