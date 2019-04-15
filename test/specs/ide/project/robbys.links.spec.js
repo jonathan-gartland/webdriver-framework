@@ -19,7 +19,7 @@ describe("Left Nav Links *TBD* ", () => {
 
   afterEach( () => {
     browser.url('/projects');
-    browser.pause(3000);
+    browser.pause(5000);
   });
 
 
@@ -40,9 +40,9 @@ describe("Left Nav Links *TBD* ", () => {
     ProjectPage.validateLinkWorks(ProjectPage.primersLink, '/learn/primers');
   });
 
-  it('should be on the DataCamp page after clicking DataCamp link under Learn', () => {
-    ProjectPage.validateLinkWorks(ProjectPage.datacampCourseLink, '/learn/data-camp-courses');
-  });
+  // it('should be on the DataCamp page after clicking DataCamp link under Learn', () => {
+  //   ProjectPage.validateLinkWorks(ProjectPage.datacampCourseLink, '/learn/data-camp-courses');
+  // });
 
   it('should be on the Cheat Sheets page after clicking Cheat Sheets link under Learn', () => {
     ProjectPage.validateLinkWorks(ProjectPage.cheatSheetLink, '/learn/cheat-sheets');
