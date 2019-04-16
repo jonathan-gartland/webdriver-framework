@@ -17,7 +17,8 @@ exports.config = merge(shiyappsioConf.config, {
   specs: [
     //'./test/specs/*.js',
     './test/specs/shinyappsio/landing.spec.js',
-    './test/specs/shinyappsio/login.spec.js'
+    './test/specs/shinyappsio/login.spec.js',
+    './test/specs/shinyappsio/dashboard.spec.js',
   ],
   // Patterns to exclude.
   exclude: [
