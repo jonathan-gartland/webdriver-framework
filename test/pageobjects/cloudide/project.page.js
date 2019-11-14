@@ -34,33 +34,26 @@ class ProjectPage extends Page {
   get rstudioConsolePrompt() { return $(selectors.cloudIdeCss.projectPage.rstudioConsolePrompt); }
   // Learn link page elements
   get guideLink() { return $(selectors.cloudIdeCss.projectPage.guideLink); }
-  //get guidePageActiveLink() { return $(selectors.cloudIdeCss.projectPage.guidePageActiveLink); }
-  get whatsNewLink() { return $(selectors.cloudIdeCss.projectPage.whatsNew); }
-  get whatsNewUnreadLink() { return $(selectors.cloudIdeCss.projectPage.whatsNewUnread); }
-  //get whatsNewActiveLink() { return $(selectors.cloudIdeCss.projectPage.whatsNewActiveLink); }
-  get primersLink() { return $(selectors.cloudIdeCss.projectPage.primersLink); }
-  get datacampCourseLink() { return $(selectors.cloudIdeCss.projectPage.datacampLink); }
-  get cheatSheetLink() { return $(selectors.cloudIdeCss.projectPage.cheatSheets); }
-  get feedbackLink() { return $(selectors.cloudIdeCss.projectPage.feedbackLink); }
-  get termsLink() { return $(selectors.cloudIdeCss.projectPage.termsAndConditions); }
+  get guideLinkraw() { return $(' #navPanel > div.panelContents > div.navMenu > div:nth-child(3) > div > a.menuItem.guide'); }
+  get whatsNewLink() { return $(); }
+  //get guidePageActiveLink() { return $(selectors.cloudIdeCss.projectList.guidePageActiveLink); }
 
 
   deleteClosedProject() {
     // 2 ways via GUI
     // this one is only doing it with delete button/link in my projects view
-    //const projectList = $$(selectors.cloudIdeCss.projectPage.projectList).map(function(element){
-    //  return element.getAttribute('innerText')
-    //});
-    //console.log(projectList);
-    //browser.debug();
+    const projectList = $$(selectors.cloudIdeCss.projectPage.projectList).map(function(element){ 
+        return element.getAttribute('innerText'); 
+      });
+
     if (this.existingProjectLink.isExisting()) {
       if (this.deleteProjectButton.isExisting()) {
         this.deleteProjectButton.click();
-        browser.pause(5000);
+        browser.pause(3000);
         if(this.deleteProjectOKButton.isExisting()) {
           this.deleteProjectOKButton.click();
           // how to validate? check for a list of project names
-          // before then again here - might work
+          // beforre then again here - might work
         }
       }
     }
@@ -82,7 +75,7 @@ class ProjectPage extends Page {
   openNewProject() {
     if (this.newProjectButton.isDisplayed()) {
       this.newProjectButton.click();
-      browser.pause(30000);
+      browser.pause(20000);
     }
     this.validateProjectOpened();
   }
@@ -111,7 +104,7 @@ class ProjectPage extends Page {
   validateProjectPageOpened(){
     // wait for the account pop up in case we need to select an account
     //this.accountSelectPopUp.waitForDisplayed(5000);
-    browser.pause(5000)
+    browser.pause(5000);
     // and if it does show up,
     // select the first account listed - this could be expanded to
     // look for a specific account later
@@ -157,7 +150,7 @@ class ProjectPage extends Page {
         this.createSpaceButton.click();
       }
       browser.pause(2000);
-      assert(this.spaceHeaderTitle.getText() === newSpaceName)
+      assert(this.spaceHeaderTitle.getText() === newSpaceName);
 
       // hack to keep space from piling up with dupes. I will delete
       // for now, but there should be logic to open an existing recent space
@@ -205,11 +198,11 @@ class ProjectPage extends Page {
   }
 
   validateLinkWorks(inLink, inUrlSnippet) {
-    inLink.waitForExist(10000);
+    inLink.waitForExist(5000);
     inLink.click();
     browser.waitUntil( () => {
       return browser.getUrl().indexOf(inUrlSnippet) > -1;
-    }, 10000);
+    }, 5000);
   }
 }
 

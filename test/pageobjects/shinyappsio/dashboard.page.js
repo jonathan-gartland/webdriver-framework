@@ -39,6 +39,8 @@ class DashboardPage extends Page {
     return browser.getUrl().indexOf('/dashboard') > -1;
 
   }
+
+
 }
 
 export default new DashboardPage();
